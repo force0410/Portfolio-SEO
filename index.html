@@ -25,11 +25,38 @@
             color: #18181b;
             font-weight: 600;
         }
+        @media print {
+            @page {
+                size: A4;
+                margin: 12mm;
+            }
+            body {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                background-color: #ffffff !important;
+                font-size: 12px;
+            }
+            header, .no-print, #slide-modal, #cps-modal, #toast {
+                display: none !important;
+            }
+            main {
+                max-width: 100% !important;
+                padding: 0 !important;
+            }
+            section {
+                padding-top: 1.25rem !important;
+                padding-bottom: 1.25rem !important;
+            }
+            article, .break-inside-avoid {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
     </style>
 </head>
 <body class="bg-white text-zinc-900 antialiased selection:bg-zinc-900 selection:text-white">
 
-    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-zinc-200">
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-zinc-200 no-print">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
             <a href="#top" class="font-bold text-base tracking-tight text-zinc-900 flex items-center gap-2.5">
                 <span class="w-2.5 h-2.5 rounded-full bg-blue-600 inline-block"></span>
@@ -44,11 +71,20 @@
                 <a href="#lien-he" class="hover:text-zinc-900 transition" data-i18n="nav_contact">Liên hệ</a>
             </nav>
 
-            <!-- Language Switcher: VI / EN / ZH -->
-            <div class="flex items-center gap-1 bg-zinc-100 p-1 rounded-lg border border-zinc-200 text-xs">
-                <button onclick="setLanguage('vi')" id="btn-vi" class="lang-btn active px-2.5 py-1 rounded-md transition">VI</button>
-                <button onclick="setLanguage('en')" id="btn-en" class="lang-btn px-2.5 py-1 rounded-md text-zinc-600 hover:text-zinc-900 transition">EN</button>
-                <button onclick="setLanguage('zh')" id="btn-zh" class="lang-btn px-2.5 py-1 rounded-md text-zinc-600 hover:text-zinc-900 transition">中文</button>
+            <div class="flex items-center gap-2">
+                <button onclick="exportToPDF()" class="px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-medium transition flex items-center gap-1.5 shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <span data-i18n="btn_export_pdf">Xuất PDF</span>
+                </button>
+
+                <!-- Language Switcher: VI / EN / ZH -->
+                <div class="flex items-center gap-1 bg-zinc-100 p-1 rounded-lg border border-zinc-200 text-xs">
+                    <button onclick="setLanguage('vi')" id="btn-vi" class="lang-btn active px-2.5 py-1 rounded-md transition">VI</button>
+                    <button onclick="setLanguage('en')" id="btn-en" class="lang-btn px-2.5 py-1 rounded-md text-zinc-600 hover:text-zinc-900 transition">EN</button>
+                    <button onclick="setLanguage('zh')" id="btn-zh" class="lang-btn px-2.5 py-1 rounded-md text-zinc-600 hover:text-zinc-900 transition">中文</button>
+                </div>
             </div>
         </div>
     </header>
@@ -77,13 +113,13 @@
                         Từng trực tiếp phụ trách dự án lớn, phân công và theo dõi tiến độ cho nhóm Content và Thực tập sinh. Trong công việc, tôi kết hợp Claude, ChatGPT và Gemini để rút ngắn khoảng 80% thời gian lập dàn ý bài viết và xử lý code HTML/CSS cơ bản. Giao tiếp tiếng Trung tốt (HSK 3), tiếng Anh cơ bản. Mục tiêu sắp tới là phát triển lên vị trí SEO Team Leader hoặc Digital Marketing Manager.
                     </p>
 
-                    <div class="flex flex-wrap gap-3 pt-2">
+                    <div class="flex flex-wrap gap-3 pt-2 no-print">
                         <a href="#du-an" class="px-5 py-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-white text-sm font-medium transition" data-i18n="btn_view_projects">
                             Xem hồ sơ dự án (Case Study)
                         </a>
-                        <a href="#lien-he" class="px-5 py-2.5 rounded-lg bg-white hover:bg-zinc-50 text-zinc-800 border border-zinc-300 text-sm font-medium transition" data-i18n="btn_contact">
-                            Thông tin liên hệ
-                        </a>
+                        <button onclick="exportToPDF()" class="px-5 py-2.5 rounded-lg bg-white hover:bg-zinc-50 text-zinc-800 border border-zinc-300 text-sm font-medium transition" data-i18n="btn_export_pdf">
+                            Xuất PDF
+                        </button>
                     </div>
                 </div>
 
@@ -157,7 +193,7 @@
                             </div>
                             <h3 class="text-xl font-bold text-zinc-900 mt-1" data-i18n="vib_title">Ngân hàng Quốc Tế VIB</h3>
                         </div>
-                        <div class="flex items-center gap-2 pt-2 md:pt-0">
+                        <div class="flex items-center gap-2 pt-2 md:pt-0 no-print">
                             <button onclick="openSlideModal('vib')" class="px-3.5 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-medium transition" data-i18n="btn_slide_preview">
                                 Xem Slide ngay trên trang
                             </button>
@@ -206,7 +242,7 @@
                             </div>
                             <h3 class="text-xl font-bold text-zinc-900 mt-1" data-i18n="cps_title">Hệ thống bán lẻ CellphoneS (Sforum)</h3>
                         </div>
-                        <div class="flex flex-wrap items-center gap-2 pt-2 md:pt-0">
+                        <div class="flex flex-wrap items-center gap-2 pt-2 md:pt-0 no-print">
                             <button onclick="openCpsDeckModal()" class="px-3.5 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-medium transition" data-i18n="btn_slide_preview">
                                 Xem Slide ngay trên trang
                             </button>
@@ -278,7 +314,7 @@
                             </div>
                             <h3 class="text-xl font-bold text-zinc-900 mt-1">MerPerle NuiSam Resort</h3>
                         </div>
-                        <div class="flex items-center gap-2 pt-2 md:pt-0">
+                        <div class="flex items-center gap-2 pt-2 md:pt-0 no-print">
                             <button onclick="openSlideModal('merperle')" class="px-3.5 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-medium transition" data-i18n="btn_slide_preview">
                                 Xem Slide ngay trên trang
                             </button>
@@ -326,7 +362,7 @@
                             </div>
                             <h3 class="text-xl font-bold text-zinc-900 mt-1">Ô Tô Hoàng Kim</h3>
                         </div>
-                        <div class="flex items-center gap-2 pt-2 md:pt-0">
+                        <div class="flex items-center gap-2 pt-2 md:pt-0 no-print">
                             <button onclick="openSlideModal('hoangkim')" class="px-3.5 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-medium transition" data-i18n="btn_slide_preview">
                                 Xem Slide ngay trên trang
                             </button>
@@ -931,10 +967,15 @@
             setTimeout(() => toast.classList.add('hidden'), 2200);
         }
 
+        function exportToPDF() {
+            window.print();
+        }
+
         // Multilingual Dictionary (VI / EN / ZH)
         let currentLang = 'vi';
         const translations = {
             vi: {
+                btn_export_pdf: "Xuất PDF",
                 nav_projects: "Dự án SEO",
                 nav_exp: "Kinh nghiệm",
                 nav_skills: "Kỹ năng",
@@ -1035,6 +1076,7 @@
                 contact_desc: "Anh/chị cần trao đổi thêm về kinh nghiệm làm việc hoặc các dự án SEO bên trên có thể liên hệ trực tiếp qua số điện thoại hoặc email."
             },
             en: {
+                btn_export_pdf: "Export PDF",
                 nav_projects: "Projects",
                 nav_exp: "Experience",
                 nav_skills: "Skills",
@@ -1135,6 +1177,7 @@
                 contact_desc: "Feel free to reach out via phone or email if you would like to discuss my work experience or any of the SEO projects above."
             },
             zh: {
+                btn_export_pdf: "导出 PDF",
                 nav_projects: "SEO 项目",
                 nav_exp: "工作经历",
                 nav_skills: "专业技能",
