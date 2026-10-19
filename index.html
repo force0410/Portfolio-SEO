@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đoàn Kiến Lực | SEO Specialist Portfolio</title>
-    <meta name="description" content="Hồ sơ năng lực và dự án SEO của Đoàn Kiến Lực - Kinh nghiệm triển khai cho VIB, CellphoneS, MerPerle và Ô Tô Hoàng Kim.">
+    <meta name="description" content="Hồ sơ năng lực và các dự án SEO tiêu biểu của Đoàn Kiến Lực - VIB, CellphoneS, MerPerle và Ô Tô Hoàng Kim.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,23 +20,24 @@
             color: #ffffff;
             font-weight: 600;
         }
-        .tab-filter.active {
-            border-bottom: 2px solid #18181b;
+        .modal-tab-btn.active {
+            background-color: #ffffff;
             color: #18181b;
             font-weight: 600;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         @media print {
             @page {
                 size: A4;
-                margin: 12mm;
+                margin: 10mm;
             }
             body {
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
                 background-color: #ffffff !important;
-                font-size: 12px;
+                font-size: 11.5px;
             }
-            header, .no-print, #slide-modal, #cps-modal, #toast {
+            header, .no-print, #project-modal, #toast {
                 display: none !important;
             }
             main {
@@ -44,8 +45,8 @@
                 padding: 0 !important;
             }
             section {
-                padding-top: 1.25rem !important;
-                padding-bottom: 1.25rem !important;
+                padding-top: 1rem !important;
+                padding-bottom: 1rem !important;
             }
             article, .break-inside-avoid {
                 break-inside: avoid;
@@ -60,7 +61,7 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
             <a href="#top" class="font-bold text-base tracking-tight text-zinc-900 flex items-center gap-2.5">
                 <span class="w-2.5 h-2.5 rounded-full bg-blue-600 inline-block"></span>
-                <span>Đoàn Kiến Lực</span>
+                <span data-i18n="nav_brand">Đoàn Kiến Lực</span>
             </a>
 
             <nav class="hidden md:flex items-center gap-6 text-sm text-zinc-600">
@@ -79,11 +80,11 @@
                     <span data-i18n="btn_export_pdf">Xuất PDF</span>
                 </button>
 
-                <!-- Language Switcher: VI / EN / ZH -->
+                <!-- Language Switcher: VI / EN / 简中 (Simplified Chinese) -->
                 <div class="flex items-center gap-1 bg-zinc-100 p-1 rounded-lg border border-zinc-200 text-xs">
                     <button onclick="setLanguage('vi')" id="btn-vi" class="lang-btn active px-2.5 py-1 rounded-md transition">VI</button>
                     <button onclick="setLanguage('en')" id="btn-en" class="lang-btn px-2.5 py-1 rounded-md text-zinc-600 hover:text-zinc-900 transition">EN</button>
-                    <button onclick="setLanguage('zh')" id="btn-zh" class="lang-btn px-2.5 py-1 rounded-md text-zinc-600 hover:text-zinc-900 transition">中文</button>
+                    <button onclick="setLanguage('zh')" id="btn-zh" class="lang-btn px-2.5 py-1 rounded-md text-zinc-600 hover:text-zinc-900 transition">简中</button>
                 </div>
             </div>
         </div>
@@ -91,12 +92,11 @@
 
     <main id="top" class="max-w-5xl mx-auto px-4 sm:px-6">
 
-        <!-- HERO / INTRO -->
         <section class="py-12 md:py-16 border-b border-zinc-200">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-8 space-y-5">
                     <div class="inline-flex items-center gap-2 text-xs font-medium text-blue-700 bg-blue-50 border border-blue-200 px-3 py-1 rounded-md">
-                        <span>SEO Specialist</span>
+                        <span data-i18n="hero_role_badge">SEO Specialist</span>
                         <span>•</span>
                         <span data-i18n="hero_exp_badge">Hơn 2 năm kinh nghiệm</span>
                     </div>
@@ -172,7 +172,6 @@
             </div>
         </section>
 
-        <!-- DỰ ÁN TIÊU BIỂU (CASE STUDIES) -->
         <section id="du-an" class="py-12 md:py-16 border-b border-zinc-200">
             <div class="mb-8">
                 <h2 class="text-2xl font-bold text-zinc-900" data-i18n="sec_projects_title">Dự án SEO đã triển khai</h2>
@@ -189,12 +188,12 @@
                         <div>
                             <div class="flex items-center gap-2.5">
                                 <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200" data-i18n="vib_tag">Tài chính - Ngân hàng</span>
-                                <span class="text-xs text-zinc-500">03/2025 – 09/2025</span>
+                                <span class="text-xs text-zinc-500" data-i18n="vib_date">03/2025 – 09/2025</span>
                             </div>
                             <h3 class="text-xl font-bold text-zinc-900 mt-1" data-i18n="vib_title">Ngân hàng Quốc Tế VIB</h3>
                         </div>
                         <div class="flex items-center gap-2 pt-2 md:pt-0 no-print">
-                            <button onclick="openSlideModal('vib')" class="px-3.5 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-medium transition" data-i18n="btn_slide_preview">
+                            <button onclick="openProjectModal('vib')" class="px-3.5 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-medium transition" data-i18n="btn_slide_preview">
                                 Xem Slide ngay trên trang
                             </button>
                         </div>
@@ -213,7 +212,7 @@
                         </div>
 
                         <div class="md:col-span-2 space-y-3">
-                            <div class="font-semibold text-zinc-900" data-i18n="label_execution">Hạng mục thực hiện</div>
+                            <div class="font-semibold text-zinc-900" data-i18n="label_execution">Hạng mục thực hiện & Kết quả</div>
                             <ul class="space-y-1.5 text-zinc-600 list-disc pl-4">
                                 <li data-i18n="vib_step_1">Dùng SEMrush phân tích từ khóa của đối thủ để tìm các chủ đề còn thiếu.</li>
                                 <li data-i18n="vib_step_2">Quét toàn bộ website bằng Screaming Frog, xử lý lỗi thu thập dữ liệu (crawl), chỉnh lại cấu trúc URL và tốc độ tải trang.</li>
@@ -232,18 +231,18 @@
                     </div>
                 </article>
 
-                <!-- Project 2: CellphoneS (NEW WITH INTERACTIVE SLIDE DECK & SERP PROOF) -->
+                <!-- Project 2: CellphoneS -->
                 <article class="border border-zinc-200 rounded-xl p-6 bg-white hover:border-zinc-300 transition">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 pb-4 border-b border-zinc-100">
                         <div>
                             <div class="flex items-center gap-2.5">
                                 <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-red-50 text-red-700 border border-red-200" data-i18n="cps_tag">Thương mại điện tử - Công nghệ</span>
-                                <span class="text-xs text-zinc-500">09/2025 – 07/2026</span>
+                                <span class="text-xs text-zinc-500" data-i18n="cps_date">09/2025 – 07/2026</span>
                             </div>
                             <h3 class="text-xl font-bold text-zinc-900 mt-1" data-i18n="cps_title">Hệ thống bán lẻ CellphoneS (Sforum)</h3>
                         </div>
                         <div class="flex flex-wrap items-center gap-2 pt-2 md:pt-0 no-print">
-                            <button onclick="openCpsDeckModal()" class="px-3.5 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-medium transition" data-i18n="btn_slide_preview">
+                            <button onclick="openProjectModal('cellphones')" class="px-3.5 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-medium transition" data-i18n="btn_slide_preview">
                                 Xem Slide ngay trên trang
                             </button>
                         </div>
@@ -270,26 +269,26 @@
                                 <li data-i18n="cps_step_4">Kết quả thực tế: Kéo thành công 252 từ khóa mục tiêu lọt vào Top 1 – Top 3 Google.</li>
                             </ul>
 
-                            <!-- Quick Live Google SERP Verification Box right inside the card -->
+                            <!-- Quick Google SERP Verification Box -->
                             <div class="mt-3 p-3.5 rounded-xl bg-zinc-50 border border-zinc-200">
                                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2.5">
-                                    <span class="text-xs font-semibold text-zinc-800" data-i18n="cps_proof_label">Kiểm chứng nhanh bài viết đang giữ Top 1-3 trên Google (Bấm để kiểm tra trực tiếp):</span>
-                                    <button onclick="openCpsDeckModal()" class="text-xs font-medium text-blue-600 hover:underline text-left sm:text-right" data-i18n="cps_view_all_proof">Xem chi tiết trong Slide →</button>
+                                    <span class="text-xs font-semibold text-zinc-800" data-i18n="cps_proof_label">Kiểm chứng nhanh bài viết đang giữ Top 1-3 trên Google:</span>
+                                    <button onclick="openProjectModal('cellphones')" class="text-xs font-medium text-blue-600 hover:underline text-left sm:text-right" data-i18n="cps_view_all_proof">Xem chi tiết trong Slide →</button>
                                 </div>
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                                     <a href="https://www.google.com/search?q=so+s%C3%A1nh+ios+v%C3%A0+android+cellphones" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 rounded-lg bg-white border border-zinc-200 hover:border-blue-400 transition group">
                                         <div class="truncate pr-2">
-                                            <span class="font-medium text-zinc-900">🔍 "so sánh ios và android"</span>
+                                            <span class="font-medium text-zinc-900" data-i18n="cps_proof_q1">🔍 "so sánh ios và android"</span>
                                             <span class="block text-[11px] text-zinc-500 truncate">cellphones.com.vn/sforum/so-sanh-ios-va-android</span>
                                         </div>
-                                        <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-semibold border border-emerald-200 flex-shrink-0">Top 1-3 ↗</span>
+                                        <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-semibold border border-emerald-200 flex-shrink-0" data-i18n="badge_top13">Top 1-3 ↗</span>
                                     </a>
                                     <a href="https://www.google.com/search?q=c%C3%A1ch+bi%E1%BA%BFn+android+th%C3%A0nh+ios+cellphones" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 rounded-lg bg-white border border-zinc-200 hover:border-blue-400 transition group">
                                         <div class="truncate pr-2">
-                                            <span class="font-medium text-zinc-900">🔍 "cách biến android thành ios"</span>
+                                            <span class="font-medium text-zinc-900" data-i18n="cps_proof_q2">🔍 "cách biến android thành ios"</span>
                                             <span class="block text-[11px] text-zinc-500 truncate">cellphones.com.vn/sforum/cach-bien-android-thanh-ios</span>
                                         </div>
-                                        <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-semibold border border-emerald-200 flex-shrink-0">Top 1-3 ↗</span>
+                                        <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-semibold border border-emerald-200 flex-shrink-0" data-i18n="badge_top13">Top 1-3 ↗</span>
                                     </a>
                                 </div>
                             </div>
@@ -310,12 +309,12 @@
                         <div>
                             <div class="flex items-center gap-2.5">
                                 <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200" data-i18n="mp_tag">Du lịch - Khách sạn</span>
-                                <span class="text-xs text-zinc-500">03/2025 – 09/2025</span>
+                                <span class="text-xs text-zinc-500" data-i18n="mp_date">03/2025 – 09/2025</span>
                             </div>
-                            <h3 class="text-xl font-bold text-zinc-900 mt-1">MerPerle NuiSam Resort</h3>
+                            <h3 class="text-xl font-bold text-zinc-900 mt-1" data-i18n="mp_title">MerPerle NuiSam Resort</h3>
                         </div>
                         <div class="flex items-center gap-2 pt-2 md:pt-0 no-print">
-                            <button onclick="openSlideModal('merperle')" class="px-3.5 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-medium transition" data-i18n="btn_slide_preview">
+                            <button onclick="openProjectModal('merperle')" class="px-3.5 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-medium transition" data-i18n="btn_slide_preview">
                                 Xem Slide ngay trên trang
                             </button>
                         </div>
@@ -334,7 +333,7 @@
                         </div>
 
                         <div class="md:col-span-2 space-y-3">
-                            <div class="font-semibold text-zinc-900" data-i18n="label_execution">Hạng mục thực hiện</div>
+                            <div class="font-semibold text-zinc-900" data-i18n="label_execution">Hạng mục thực hiện & Kết quả</div>
                             <ul class="space-y-1.5 text-zinc-600 list-disc pl-4">
                                 <li data-i18n="mp_step_1">Kiểm tra lỗi bằng Screaming Frog, nén dung lượng ảnh, cải thiện tốc độ tải trang và cài đặt Schema Markup, Yoast SEO.</li>
                                 <li data-i18n="mp_step_2">Sắp xếp lại bài viết theo cụm chủ đề (Topic Cluster), chỉnh lại thẻ H1-H3, URL và gắn liên kết nội bộ giữa các bài.</li>
@@ -358,12 +357,12 @@
                         <div>
                             <div class="flex items-center gap-2.5">
                                 <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-amber-50 text-amber-800 border border-amber-200" data-i18n="hk_tag">Phụ kiện & Dịch vụ Ô tô</span>
-                                <span class="text-xs text-zinc-500">03/2024 – 02/2025</span>
+                                <span class="text-xs text-zinc-500" data-i18n="hk_date">03/2024 – 02/2025</span>
                             </div>
-                            <h3 class="text-xl font-bold text-zinc-900 mt-1">Ô Tô Hoàng Kim</h3>
+                            <h3 class="text-xl font-bold text-zinc-900 mt-1" data-i18n="hk_title">Ô Tô Hoàng Kim</h3>
                         </div>
                         <div class="flex items-center gap-2 pt-2 md:pt-0 no-print">
-                            <button onclick="openSlideModal('hoangkim')" class="px-3.5 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-medium transition" data-i18n="btn_slide_preview">
+                            <button onclick="openProjectModal('hoangkim')" class="px-3.5 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-medium transition" data-i18n="btn_slide_preview">
                                 Xem Slide ngay trên trang
                             </button>
                         </div>
@@ -382,7 +381,7 @@
                         </div>
 
                         <div class="md:col-span-2 space-y-3">
-                            <div class="font-semibold text-zinc-900" data-i18n="label_execution">Hạng mục thực hiện</div>
+                            <div class="font-semibold text-zinc-900" data-i18n="label_execution">Hạng mục thực hiện & Kết quả</div>
                             <ul class="space-y-1.5 text-zinc-600 list-disc pl-4">
                                 <li data-i18n="hk_step_1">Chọn nhóm từ khóa dài (long-tail) ít cạnh tranh để lấy traffic trước, đồng thời sắp xếp lại danh mục sản phẩm và blog.</li>
                                 <li data-i18n="hk_step_2">Cài Schema cho sản phẩm, dịch vụ và đánh giá; sửa Sitemap, Robots.txt và khắc phục 95% lỗi kỹ thuật.</li>
@@ -402,7 +401,6 @@
             </div>
         </section>
 
-        <!-- KINH NGHIỆM LÀM VIỆC -->
         <section id="kinh-nghiem" class="py-12 md:py-16 border-b border-zinc-200">
             <h2 class="text-2xl font-bold text-zinc-900 mb-8" data-i18n="sec_exp_title">Quá trình làm việc</h2>
 
@@ -428,7 +426,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-4 pt-6 border-t border-zinc-100">
                     <div class="md:col-span-3 text-sm">
                         <div class="font-semibold text-zinc-900">CellphoneS</div>
-                        <div class="text-zinc-500 text-xs mt-0.5">09/2025 – 07/2026</div>
+                        <div class="text-zinc-500 text-xs mt-0.5" data-i18n="exp_2_time">09/2025 – 07/2026</div>
                     </div>
                     <div class="md:col-span-9 space-y-2 text-sm">
                         <div class="font-bold text-zinc-900" data-i18n="exp_2_role">SEO Executive (Part-time)</div>
@@ -445,7 +443,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-4 pt-6 border-t border-zinc-100">
                     <div class="md:col-span-3 text-sm">
                         <div class="font-semibold text-zinc-900">Navee Agency</div>
-                        <div class="text-zinc-500 text-xs mt-0.5">03/2025 – 09/2025</div>
+                        <div class="text-zinc-500 text-xs mt-0.5" data-i18n="exp_3_time">03/2025 – 09/2025</div>
                     </div>
                     <div class="md:col-span-9 space-y-2 text-sm">
                         <div class="font-bold text-zinc-900" data-i18n="exp_3_role">SEO Executive</div>
@@ -461,8 +459,8 @@
                 <!-- Job 4: Ô Tô Hoàng Kim -->
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-4 pt-6 border-t border-zinc-100">
                     <div class="md:col-span-3 text-sm">
-                        <div class="font-semibold text-zinc-900">Ô Tô Hoàng Kim</div>
-                        <div class="text-zinc-500 text-xs mt-0.5">03/2024 – 02/2025</div>
+                        <div class="font-semibold text-zinc-900" data-i18n="exp_4_company">Ô Tô Hoàng Kim</div>
+                        <div class="text-zinc-500 text-xs mt-0.5" data-i18n="exp_4_time">03/2024 – 02/2025</div>
                     </div>
                     <div class="md:col-span-9 space-y-2 text-sm">
                         <div class="font-bold text-zinc-900" data-i18n="exp_4_role">SEO Fresher</div>
@@ -477,7 +475,6 @@
             </div>
         </section>
 
-        <!-- KỸ NĂNG CHUYÊN MÔN -->
         <section id="ky-nang" class="py-12 md:py-16 border-b border-zinc-200">
             <h2 class="text-2xl font-bold text-zinc-900 mb-6" data-i18n="sec_skills_title">Kỹ năng & Công cụ làm việc</h2>
 
@@ -505,7 +502,6 @@
             </div>
         </section>
 
-        <!-- HỌC VẤN & CHỨNG CHỈ -->
         <section id="hoc-van" class="py-12 md:py-16 border-b border-zinc-200">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
@@ -549,7 +545,6 @@
             </div>
         </section>
 
-        <!-- LIÊN HỆ -->
         <section id="lien-he" class="py-12 md:py-16">
             <div class="bg-zinc-50 border border-zinc-200 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                 <div class="space-y-2">
@@ -576,296 +571,53 @@
         </section>
     </main>
 
-    <!-- GOOGLE SLIDES MODAL -->
-    <div id="slide-modal" class="fixed inset-0 z-50 hidden bg-black/60 flex items-center justify-center p-3 sm:p-6">
-        <div class="bg-white border border-zinc-200 rounded-xl max-w-5xl w-full overflow-hidden shadow-xl flex flex-col max-h-[90vh]">
-            <div class="px-5 py-3.5 bg-zinc-50 border-b border-zinc-200 flex items-center justify-between gap-4">
-                <h3 id="modal-title" class="text-sm sm:text-base font-bold text-zinc-900 truncate">Slide dự án</h3>
-                <button onclick="closeSlideModal()" class="px-2.5 py-1.5 rounded-lg bg-zinc-200 hover:bg-zinc-300 text-zinc-800 text-xs font-bold transition">
-                    ✕
-                </button>
-            </div>
-            <div class="w-full aspect-video bg-zinc-900">
-                <iframe id="modal-iframe" src="" class="w-full h-full border-0" allowfullscreen="true"></iframe>
-            </div>
-        </div>
-    </div>
-
-    <!-- CELLPHONES INTERACTIVE SLIDE DECK MODAL -->
-    <div id="cps-modal" class="fixed inset-0 z-50 hidden bg-black/60 flex items-center justify-center p-2 sm:p-5">
+    <div id="project-modal" class="fixed inset-0 z-50 hidden bg-black/65 flex items-center justify-center p-2 sm:p-5">
         <div class="bg-white border border-zinc-200 rounded-xl max-w-5xl w-full overflow-hidden shadow-2xl flex flex-col max-h-[92vh]">
+            
             <!-- Modal Header -->
             <div class="px-4 sm:px-6 py-3.5 bg-zinc-50 border-b border-zinc-200 flex items-center justify-between gap-3">
-                <div class="flex items-center gap-3">
-                    <span class="px-2.5 py-1 rounded bg-red-600 text-white text-xs font-bold">CellphoneS</span>
-                    <h3 class="text-sm sm:text-base font-bold text-zinc-900" data-i18n="cps_modal_title">Slide dự án SEO CellphoneS (252 Từ khóa Top 3)</h3>
+                <div class="flex items-center gap-3 truncate">
+                    <span id="modal-project-badge" class="px-2.5 py-1 rounded bg-zinc-900 text-white text-xs font-bold">CASE STUDY</span>
+                    <h3 id="modal-project-title" class="text-sm sm:text-base font-bold text-zinc-900 truncate">Slide Dự Án</h3>
                 </div>
-                <button onclick="closeCpsDeckModal()" class="px-2.5 py-1.5 rounded-lg bg-zinc-200 hover:bg-zinc-300 text-zinc-800 text-xs font-bold transition">
-                    ✕
-                </button>
+                <div class="flex items-center gap-2">
+                    <div id="modal-tab-group" class="hidden sm:flex items-center gap-1 bg-zinc-200/80 p-0.5 rounded-lg text-xs">
+                        <button onclick="switchModalView('deck')" id="tab-btn-deck" class="modal-tab-btn active px-2.5 py-1 rounded-md transition">Slide Đa Ngữ</button>
+                        <button onclick="switchModalView('embed')" id="tab-btn-embed" class="modal-tab-btn px-2.5 py-1 rounded-md text-zinc-600 transition">Google Slides</button>
+                    </div>
+                    <button onclick="closeProjectModal()" class="px-2.5 py-1.5 rounded-lg bg-zinc-200 hover:bg-zinc-300 text-zinc-800 text-xs font-bold transition">
+                        ✕
+                    </button>
+                </div>
             </div>
 
-            <!-- SLIDE PRESENTATION VIEW -->
-            <div id="cps-view-slides" class="flex-1 overflow-y-auto p-4 sm:p-8 bg-zinc-100 flex flex-col justify-between">
-                <!-- Slide Container -->
-                <div class="bg-white border border-zinc-200 rounded-xl shadow-sm p-6 sm:p-8 min-h-[420px] flex flex-col justify-between">
-
-                    <!-- SLIDE 1: OVERVIEW -->
-                    <div class="cps-slide space-y-6" data-slide="1">
-                        <div class="flex items-center justify-between border-b border-zinc-100 pb-4">
-                            <div>
-                                <span class="text-xs font-semibold text-red-600 uppercase tracking-wider">Slide 01 / 04 • Tổng quan dự án</span>
-                                <h4 class="text-2xl font-bold text-zinc-900 mt-1">Case Study SEO: Hệ thống bán lẻ CellphoneS (Sforum)</h4>
-                            </div>
-                            <span class="text-xs text-zinc-500 bg-zinc-100 px-3 py-1 rounded-md">09/2025 – 07/2026</span>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div class="p-4 rounded-xl bg-zinc-50 border border-zinc-200">
-                                <div class="text-xs text-zinc-500">Vai trò đảm nhận</div>
-                                <div class="text-base font-bold text-zinc-900 mt-1">SEO Executive (Part-time)</div>
-                                <p class="text-xs text-zinc-600 mt-1">Phụ trách nghiên cứu từ khóa, lên Outline chuẩn E-E-A-T và tối ưu On-page mảng iPhone & Android.</p>
-                            </div>
-                            <div class="p-4 rounded-xl bg-zinc-50 border border-zinc-200">
-                                <div class="text-xs text-zinc-500">Kết quả từ khóa</div>
-                                <div class="text-2xl font-bold text-red-600 mt-1">252 Từ khóa Top 3</div>
-                                <p class="text-xs text-zinc-600 mt-1">Kéo các bài viết có thứ hạng thấp (trang 2-3) lên Top 1-3 Google bền vững.</p>
-                            </div>
-                            <div class="p-4 rounded-xl bg-zinc-50 border border-zinc-200">
-                                <div class="text-xs text-zinc-500">Hiệu suất quy trình AI</div>
-                                <div class="text-2xl font-bold text-zinc-900 mt-1">-50% Thời gian</div>
-                                <p class="text-xs text-zinc-600 mt-1">Kết hợp SEMrush và AI Prompting để rút ngắn một nửa thời gian nghiên cứu chủ đề & lập dàn ý.</p>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2 text-sm">
-                            <div class="space-y-2">
-                                <div class="font-bold text-zinc-900">Bối cảnh & Bài toán thực tế</div>
-                                <p class="text-zinc-600 leading-relaxed">
-                                    Chuyên trang công nghệ Sforum của CellphoneS có lượng bài viết lớn nhưng nhiều bài viết mảng thủ thuật, đánh giá và so sánh iPhone / Android bị kẹt ở trang 2 hoặc tụt hạng trước sự cạnh tranh từ Thế Giới Di Động, FPT Shop.
-                                </p>
-                            </div>
-                            <div class="space-y-2">
-                                <div class="font-bold text-zinc-900">Hướng giải quyết trọng tâm</div>
-                                <p class="text-zinc-600 leading-relaxed">
-                                    Không viết tràn lan mà tập trung rà soát (Audit) các URL có sẵn tiềm năng, bổ sung thông tin thực tế theo đúng Search Intent của người mua, chuẩn hóa On-page và mạng lưới Internal Link về trang danh mục sản phẩm.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SLIDE 2: EXECUTION WORKFLOW -->
-                    <div class="cps-slide hidden space-y-6" data-slide="2">
-                        <div class="flex items-center justify-between border-b border-zinc-100 pb-4">
-                            <div>
-                                <span class="text-xs font-semibold text-red-600 uppercase tracking-wider">Slide 02 / 04 • Quy trình triển khai</span>
-                                <h4 class="text-2xl font-bold text-zinc-900 mt-1">Quy trình 4 bước kéo 252 từ khóa vào Top 3</h4>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-                            <div class="p-4 rounded-xl border border-zinc-200 bg-white space-y-1.5">
-                                <div class="text-xs font-bold text-red-600">BƯỚC 1 • NGHIÊN CỨU TỪ KHÓA & INTENT</div>
-                                <div class="font-bold text-zinc-900">Phân nhóm từ khóa iPhone & Android</div>
-                                <p class="text-zinc-600 text-xs leading-relaxed">
-                                    Dùng SEMrush và Keyword Tool lọc danh sách từ khóa theo mục đích tìm kiếm (thủ thuật iOS/Android, so sánh dòng máy, tư vấn chọn mua) để tránh trùng lặp nội dung (Cannibalization).
-                                </p>
-                            </div>
-
-                            <div class="p-4 rounded-xl border border-zinc-200 bg-white space-y-1.5">
-                                <div class="text-xs font-bold text-red-600">BƯỚC 2 • LẬP OUTLINE BẰNG AI PROMPT</div>
-                                <div class="font-bold text-zinc-900">Chuẩn hóa cấu trúc bài viết E-E-A-T</div>
-                                <p class="text-zinc-600 text-xs leading-relaxed">
-                                    Thiết kế câu lệnh Prompt trên Claude & ChatGPT để phân tích 5 đối thủ đứng đầu SERP, từ đó tạo dàn ý H2-H3 chi tiết, bổ sung bảng so sánh thông số giúp giảm 50% thời gian lên sườn bài.
-                                </p>
-                            </div>
-
-                            <div class="p-4 rounded-xl border border-zinc-200 bg-white space-y-1.5">
-                                <div class="text-xs font-bold text-red-600">BƯỚC 3 • CONTENT REFRESH & ON-PAGE</div>
-                                <div class="font-bold text-zinc-900">Nâng cấp nội dung bài viết hạng thấp</div>
-                                <p class="text-zinc-600 text-xs leading-relaxed">
-                                    Rà soát các bài ở vị trí 8–20, viết bổ sung thông tin cập nhật mới nhất, tối ưu lại Title kích thích CTR, Meta Description, thẻ Alt ảnh và chèn từ khóa ngữ nghĩa (LSI).
-                                </p>
-                            </div>
-
-                            <div class="p-4 rounded-xl border border-zinc-200 bg-white space-y-1.5">
-                                <div class="text-xs font-bold text-red-600">BƯỚC 4 • INTERNAL LINK & THEO DÕI</div>
-                                <div class="font-bold text-zinc-900">Điều hướng liên kết nội bộ & giữ Top</div>
-                                <p class="text-zinc-600 text-xs leading-relaxed">
-                                    Đặt liên kết nội bộ theo cụm chủ đề (Topic Cluster) giữa các bài tin tức Sforum và dẫn link về trang mua hàng CellphoneS. Theo dõi biến động thứ hạng định kỳ qua Google Sheets.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SLIDE 3: GOOGLE SERP VISUAL PROOF #1 -->
-                    <div class="cps-slide hidden space-y-5" data-slide="3">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-zinc-100 pb-3">
-                            <div>
-                                <span class="text-xs font-semibold text-red-600 uppercase tracking-wider">Slide 03 / 04 • Minh chứng kết quả Google SERP #1</span>
-                                <h4 class="text-xl font-bold text-zinc-900 mt-0.5">Nhóm từ khóa So sánh & Tư vấn chọn mua iPhone / Android</h4>
-                            </div>
-                            <span class="text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded font-medium">Bấm nút bên dưới để kiểm tra trực tiếp trên Google</span>
-                        </div>
-
-                        <!-- Simulated Real Google Search Result Screenshot 1 -->
-                        <div class="bg-zinc-50 border border-zinc-200 rounded-xl p-4 space-y-3">
-                            <!-- Search Bar Mock -->
-                            <div class="flex items-center justify-between bg-white border border-zinc-300 rounded-full px-4 py-2 shadow-sm">
-                                <div class="flex items-center gap-2.5 text-xs sm:text-sm text-zinc-800">
-                                    <span class="text-blue-600 font-bold">G</span>
-                                    <span class="font-medium">so sánh ios và android</span>
-                                </div>
-                                <a href="https://www.google.com/search?q=so+s%C3%A1nh+ios+v%C3%A0+android" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-blue-600 hover:underline flex-shrink-0">
-                                    Mở Google kiểm chứng ↗
-                                </a>
-                            </div>
-
-                            <!-- Google Result Item -->
-                            <div class="bg-white p-4 rounded-lg border border-zinc-200 space-y-1">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-2 text-xs text-zinc-600">
-                                        <span class="w-5 h-5 rounded-full bg-red-600 text-white font-bold flex items-center justify-center text-[10px]">S</span>
-                                        <div>
-                                            <div class="font-medium text-zinc-900 leading-none">CellphoneS</div>
-                                            <div class="text-[11px] text-zinc-500">https://cellphones.com.vn › sforum › so-sanh-ios-va-android</div>
-                                        </div>
-                                    </div>
-                                    <span class="px-2 py-0.5 text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 rounded">TOP 1 - 3 GOOGLE</span>
-                                </div>
-                                <a href="https://cellphones.com.vn/sforum/so-sanh-ios-va-android" target="_blank" rel="noopener noreferrer" class="block text-base sm:text-lg font-semibold text-blue-700 hover:underline pt-1">
-                                    So sánh iOS và Android: Sự khác biệt là gì và hệ điều hành nào phù hợp cho bạn?
-                                </a>
-                                <p class="text-xs text-zinc-600 leading-relaxed">
-                                    So sánh iOS và Android - Hai hệ điều hành trên smartphone phổ biến nhất hiện nay. Phân tích chi tiết sự khác biệt về hiệu năng, khả năng tùy biến, kho ứng dụng và độ ổn định để chọn mua máy phù hợp...
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Simulated Real Google Search Result Screenshot 2 -->
-                        <div class="bg-zinc-50 border border-zinc-200 rounded-xl p-4 space-y-3">
-                            <div class="flex items-center justify-between bg-white border border-zinc-300 rounded-full px-4 py-2 shadow-sm">
-                                <div class="flex items-center gap-2.5 text-xs sm:text-sm text-zinc-800">
-                                    <span class="text-blue-600 font-bold">G</span>
-                                    <span class="font-medium">lý do chọn mua iphone thay vì android</span>
-                                </div>
-                                <a href="https://www.google.com/search?q=l%C3%BD+do+nhi%E1%BB%81u+ng%C6%B0%E1%BB%9Di+ch%E1%BB%8Dn+mua+iphone+thay+v%C3%AC+android" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-blue-600 hover:underline flex-shrink-0">
-                                    Mở Google kiểm chứng ↗
-                                </a>
-                            </div>
-
-                            <div class="bg-white p-4 rounded-lg border border-zinc-200 space-y-1">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-2 text-xs text-zinc-600">
-                                        <span class="w-5 h-5 rounded-full bg-red-600 text-white font-bold flex items-center justify-center text-[10px]">S</span>
-                                        <div>
-                                            <div class="font-medium text-zinc-900 leading-none">CellphoneS</div>
-                                            <div class="text-[11px] text-zinc-500">https://cellphones.com.vn › sforum › ly-do-nhieu-nguoi-chon-mua-iphone-thay-vi-android</div>
-                                        </div>
-                                    </div>
-                                    <span class="px-2 py-0.5 text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 rounded">TOP 1 - 3 GOOGLE</span>
-                                </div>
-                                <a href="https://cellphones.com.vn/sforum/ly-do-nhieu-nguoi-chon-mua-iphone-thay-vi-android" target="_blank" rel="noopener noreferrer" class="block text-base sm:text-lg font-semibold text-blue-700 hover:underline pt-1">
-                                    Lý do nhiều người chọn mua iPhone thay vì Android - CellphoneS
-                                </a>
-                                <p class="text-xs text-zinc-600 leading-relaxed">
-                                    Tổng hợp những lý do người dùng chọn mua iPhone thay vì Android: Hệ sinh thái Apple đồng bộ, hệ điều hành iOS trực quan dễ sử dụng, bảo mật cao và giữ giá tốt khi bán lại...
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SLIDE 4: GOOGLE SERP VISUAL PROOF #2 -->
-                    <div class="cps-slide hidden space-y-5" data-slide="4">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-zinc-100 pb-3">
-                            <div>
-                                <span class="text-xs font-semibold text-red-600 uppercase tracking-wider">Slide 04 / 04 • Minh chứng kết quả Google SERP #2</span>
-                                <h4 class="text-xl font-bold text-zinc-900 mt-0.5">Nhóm từ khóa Thủ thuật & Tính năng iPhone / Android</h4>
-                            </div>
-                            <span class="text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded font-medium">Kết quả thực tế trên Google Search</span>
-                        </div>
-
-                        <!-- Simulated Real Google Search Result Screenshot 3 -->
-                        <div class="bg-zinc-50 border border-zinc-200 rounded-xl p-4 space-y-3">
-                            <div class="flex items-center justify-between bg-white border border-zinc-300 rounded-full px-4 py-2 shadow-sm">
-                                <div class="flex items-center gap-2.5 text-xs sm:text-sm text-zinc-800">
-                                    <span class="text-blue-600 font-bold">G</span>
-                                    <span class="font-medium">cách biến android thành ios</span>
-                                </div>
-                                <a href="https://www.google.com/search?q=c%C3%A1ch+bi%E1%BA%BFn+android+th%C3%A0nh+ios" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-blue-600 hover:underline flex-shrink-0">
-                                    Mở Google kiểm chứng ↗
-                                </a>
-                            </div>
-
-                            <div class="bg-white p-4 rounded-lg border border-zinc-200 space-y-1">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-2 text-xs text-zinc-600">
-                                        <span class="w-5 h-5 rounded-full bg-red-600 text-white font-bold flex items-center justify-center text-[10px]">S</span>
-                                        <div>
-                                            <div class="font-medium text-zinc-900 leading-none">CellphoneS</div>
-                                            <div class="text-[11px] text-zinc-500">https://cellphones.com.vn › sforum › cach-bien-android-thanh-ios</div>
-                                        </div>
-                                    </div>
-                                    <span class="px-2 py-0.5 text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 rounded">TOP 1 - 3 GOOGLE</span>
-                                </div>
-                                <a href="https://cellphones.com.vn/sforum/cach-bien-android-thanh-ios" target="_blank" rel="noopener noreferrer" class="block text-base sm:text-lg font-semibold text-blue-700 hover:underline pt-1">
-                                    6 cách biến Android thành iOS sử dụng giống như iPhone
-                                </a>
-                                <p class="text-xs text-zinc-600 leading-relaxed">
-                                    Hướng dẫn chi tiết cách cài giao diện iOS cho điện thoại Android, sử dụng Control Center, khóa màn hình và bộ icon giống iPhone mượt mà, dễ thực hiện...
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Simulated Real Google Search Result Screenshot 4 -->
-                        <div class="bg-zinc-50 border border-zinc-200 rounded-xl p-4 space-y-3">
-                            <div class="flex items-center justify-between bg-white border border-zinc-300 rounded-full px-4 py-2 shadow-sm">
-                                <div class="flex items-center gap-2.5 text-xs sm:text-sm text-zinc-800">
-                                    <span class="text-blue-600 font-bold">G</span>
-                                    <span class="font-medium">tính năng trên iphone vượt trội so với android</span>
-                                </div>
-                                <a href="https://www.google.com/search?q=5+t%C3%ADnh+n%C4%83ng+tr%C3%AAn+iphone+ho%C3%A0n+to%C3%A0n+v%C6%B0%E1%BB%A3t+tr%E1%BB%99i+so+v%E1%BB%9Bi+android" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-blue-600 hover:underline flex-shrink-0">
-                                    Mở Google kiểm chứng ↗
-                                </a>
-                            </div>
-
-                            <div class="bg-white p-4 rounded-lg border border-zinc-200 space-y-1">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-2 text-xs text-zinc-600">
-                                        <span class="w-5 h-5 rounded-full bg-red-600 text-white font-bold flex items-center justify-center text-[10px]">S</span>
-                                        <div>
-                                            <div class="font-medium text-zinc-900 leading-none">CellphoneS</div>
-                                            <div class="text-[11px] text-zinc-500">https://cellphones.com.vn › sforum › 5-tinh-nang-iphone-hoan-toan-vuot-troi-android</div>
-                                        </div>
-                                    </div>
-                                    <span class="px-2 py-0.5 text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 rounded">TOP 1 - 3 GOOGLE</span>
-                                </div>
-                                <a href="https://cellphones.com.vn/sforum/5-tinh-nang-iphone-hoan-toan-vuot-troi-android" target="_blank" rel="noopener noreferrer" class="block text-base sm:text-lg font-semibold text-blue-700 hover:underline pt-1">
-                                    5 tính năng trên iPhone hoàn toàn vượt trội so với Android - CellphoneS
-                                </a>
-                                <p class="text-xs text-zinc-600 leading-relaxed">
-                                    Điểm qua những tính năng giúp iPhone vượt trội so với điện thoại Android: Tùy chỉnh màn hình khóa, Continuity Camera, chất lượng quay video ổn định và phụ kiện MagSafe...
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide Navigation Footer -->
-                    <div class="pt-6 mt-6 border-t border-zinc-100 flex items-center justify-between">
-                        <button onclick="changeCpsSlide(-1)" id="cps-prev-btn" class="px-4 py-2 rounded-lg border border-zinc-300 text-xs font-medium text-zinc-700 hover:bg-zinc-50 disabled:opacity-40 transition">
-                            ← Slide trước
-                        </button>
-                        <div class="flex items-center gap-1.5" id="cps-dots">
-                            <button onclick="goToCpsSlide(1)" class="w-6 h-2 rounded-full bg-zinc-900 transition"></button>
-                            <button onclick="goToCpsSlide(2)" class="w-2 h-2 rounded-full bg-zinc-300 transition"></button>
-                            <button onclick="goToCpsSlide(3)" class="w-2 h-2 rounded-full bg-zinc-300 transition"></button>
-                            <button onclick="goToCpsSlide(4)" class="w-2 h-2 rounded-full bg-zinc-300 transition"></button>
-                        </div>
-                        <button onclick="changeCpsSlide(1)" id="cps-next-btn" class="px-4 py-2 rounded-lg bg-zinc-900 text-white text-xs font-medium hover:bg-zinc-800 disabled:opacity-40 transition">
-                            Slide tiếp theo →
-                        </button>
-                    </div>
+            <!-- View 1: Interactive Multilingual Slide Deck -->
+            <div id="modal-view-deck" class="flex-1 overflow-y-auto p-4 sm:p-7 bg-zinc-100 flex flex-col justify-between">
+                
+                <!-- Active Slide Card Container -->
+                <div class="bg-white border border-zinc-200 rounded-xl shadow-sm p-5 sm:p-7 min-h-[440px] flex flex-col justify-between" id="active-slide-container">
+                    <!-- Dynamic slide content injected via JavaScript -->
                 </div>
+
+                <!-- Slide Navigation Bar -->
+                <div class="pt-5 mt-4 border-t border-zinc-200 flex items-center justify-between">
+                    <button onclick="changeModalSlide(-1)" id="slide-prev-btn" class="px-4 py-2 rounded-lg border border-zinc-300 bg-white text-xs font-medium text-zinc-700 hover:bg-zinc-50 disabled:opacity-30 transition">
+                        ← <span id="label-prev-slide">Slide trước</span>
+                    </button>
+                    
+                    <div class="flex items-center gap-1.5" id="slide-dots-container">
+                        <!-- Dots generated dynamically -->
+                    </div>
+
+                    <button onclick="changeModalSlide(1)" id="slide-next-btn" class="px-4 py-2 rounded-lg bg-zinc-900 text-white text-xs font-medium hover:bg-zinc-800 disabled:opacity-30 transition">
+                        <span id="label-next-slide">Slide tiếp theo</span> →
+                    </button>
+                </div>
+            </div>
+
+            <!-- View 2: Original Google Slide Embed Iframe (for VIB, MerPerle, Hoang Kim) -->
+            <div id="modal-view-embed" class="hidden w-full aspect-video bg-zinc-950 flex-1">
+                <iframe id="modal-embed-iframe" src="" class="w-full h-full border-0" allowfullscreen="true"></iframe>
             </div>
         </div>
     </div>
@@ -876,117 +628,35 @@
     </div>
 
     <script>
-        const slideDecks = {
-            vib: {
-                title: 'Dự án SEO Ngân hàng Quốc Tế VIB',
-                embedUrl: 'https://docs.google.com/presentation/d/1X_7ag_eIv6oiI1BfVM-gYORjdYEkVeHLrSpmllLcVQA/embed?start=false&loop=false&delayms=5000'
-            },
-            merperle: {
-                title: 'Dự án SEO MerPerle NuiSam Resort',
-                embedUrl: 'https://docs.google.com/presentation/d/1Z93zgX_8QWe77q1VKP8zMqTEn-aYF3JQm3Ays0vxkI0/embed?start=false&loop=false&delayms=5000'
-            },
-            hoangkim: {
-                title: 'Dự án SEO Ô Tô Hoàng Kim',
-                embedUrl: 'https://docs.google.com/presentation/d/1ohaATzct0bVNmiR-o7k1_F4qLopUuhUVRL4ltOwHCNQ/embed?start=false&loop=false&delayms=5000'
-            }
+        let currentLang = 'vi';
+        let activeProjectKey = 'vib';
+        let currentSlideIndex = 0;
+        let currentModalView = 'deck'; // 'deck' or 'embed'
+
+        // Google Slide Embed Links
+        const embedUrls = {
+            vib: 'https://docs.google.com/presentation/d/1X_7ag_eIv6oiI1BfVM-gYORjdYEkVeHLrSpmllLcVQA/embed?start=false&loop=false&delayms=5000',
+            merperle: 'https://docs.google.com/presentation/d/1Z93zgX_8QWe77q1VKP8zMqTEn-aYF3JQm3Ays0vxkI0/embed?start=false&loop=false&delayms=5000',
+            hoangkim: 'https://docs.google.com/presentation/d/1ohaATzct0bVNmiR-o7k1_F4qLopUuhUVRL4ltOwHCNQ/embed?start=false&loop=false&delayms=5000',
+            cellphones: null
         };
 
-        function openSlideModal(key) {
-            const deck = slideDecks[key];
-            if (!deck) return;
-            document.getElementById('modal-title').textContent = deck.title;
-            document.getElementById('modal-iframe').src = deck.embedUrl;
-            document.getElementById('slide-modal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeSlideModal() {
-            document.getElementById('slide-modal').classList.add('hidden');
-            document.getElementById('modal-iframe').src = '';
-            document.body.style.overflow = '';
-        }
-
-        document.getElementById('slide-modal').addEventListener('click', (e) => {
-            if (e.target.id === 'slide-modal') closeSlideModal();
-        });
-
-        let currentCpsSlide = 1;
-        const totalCpsSlides = 4;
-
-        function openCpsDeckModal() {
-            document.getElementById('cps-modal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-            goToCpsSlide(1);
-        }
-
-        function closeCpsDeckModal() {
-            document.getElementById('cps-modal').classList.add('hidden');
-            document.body.style.overflow = '';
-        }
-
-        function goToCpsSlide(n) {
-            currentCpsSlide = Math.max(1, Math.min(totalCpsSlides, n));
-            document.querySelectorAll('.cps-slide').forEach(slide => {
-                if (parseInt(slide.getAttribute('data-slide')) === currentCpsSlide) {
-                    slide.classList.remove('hidden');
-                } else {
-                    slide.classList.add('hidden');
-                }
-            });
-
-            const dots = document.getElementById('cps-dots').children;
-            for (let i = 0; i < dots.length; i++) {
-                dots[i].className = (i + 1 === currentCpsSlide)
-                    ? 'w-6 h-2 rounded-full bg-zinc-900 transition'
-                    : 'w-2 h-2 rounded-full bg-zinc-300 transition';
-            }
-
-            document.getElementById('cps-prev-btn').disabled = (currentCpsSlide === 1);
-            document.getElementById('cps-next-btn').disabled = (currentCpsSlide === totalCpsSlides);
-        }
-
-        function changeCpsSlide(delta) {
-            goToCpsSlide(currentCpsSlide + delta);
-        }
-
-        document.getElementById('cps-modal').addEventListener('click', (e) => {
-            if (e.target.id === 'cps-modal') closeCpsDeckModal();
-        });
-
-        function copyValue(text) {
-            const input = document.createElement('textarea');
-            input.value = text;
-            document.body.appendChild(input);
-            input.select();
-            document.execCommand('copy');
-            document.body.removeChild(input);
-
-            const toast = document.getElementById('toast');
-            toast.textContent = currentLang === 'vi' ? 'Đã sao chép: ' + text : (currentLang === 'en' ? 'Copied: ' + text : '已复制: ' + text);
-            toast.classList.remove('hidden');
-            setTimeout(() => toast.classList.add('hidden'), 2200);
-        }
-
-        function exportToPDF() {
-            window.print();
-        }
-
-        // Multilingual Dictionary (VI / EN / ZH)
-        let currentLang = 'vi';
+        // Complete Multilingual Dictionaries for Main Page
         const translations = {
             vi: {
+                nav_brand: "Đoàn Kiến Lực",
                 btn_export_pdf: "Xuất PDF",
                 nav_projects: "Dự án SEO",
                 nav_exp: "Kinh nghiệm",
                 nav_skills: "Kỹ năng",
                 nav_edu: "Học vấn",
                 nav_contact: "Liên hệ",
+                hero_role_badge: "SEO Specialist",
                 hero_exp_badge: "Hơn 2 năm kinh nghiệm",
                 hero_name: "Đoàn Kiến Lực",
                 hero_bio_1: "Tôi có hơn 2 năm làm SEO trong các mảng Tài chính (Ngân hàng VIB), Thương mại điện tử (CellphoneS), Du lịch nghỉ dưỡng (MerPerle) và Phụ kiện ô tô (Ô Tô Hoàng Kim). Công việc hàng ngày của tôi bao gồm kiểm tra kỹ thuật website (Technical Audit), lên cấu trúc nội dung On-page và triển khai hệ thống Backlink / site vệ tinh.",
                 hero_bio_2: "Từng trực tiếp phụ trách dự án lớn, phân công và theo dõi tiến độ cho nhóm Content và Thực tập sinh. Trong công việc, tôi kết hợp Claude, ChatGPT và Gemini để rút ngắn khoảng 80% thời gian lập dàn ý bài viết và xử lý code HTML/CSS cơ bản. Giao tiếp tiếng Trung tốt (HSK 3), tiếng Anh cơ bản. Mục tiêu sắp tới là phát triển lên vị trí SEO Team Leader hoặc Digital Marketing Manager.",
                 btn_view_projects: "Xem hồ sơ dự án (Case Study)",
-                btn_contact: "Thông tin liên hệ",
                 card_name: "Đoàn Kiến Lực",
                 card_dob: "Ngày sinh: 04/10/2000",
                 card_loc: "P. Minh Phụng, TP.HCM (Q.11 cũ)",
@@ -1002,8 +672,12 @@
                 btn_slide_preview: "Xem Slide ngay trên trang",
                 label_goal: "Mục tiêu",
                 label_challenge: "Vấn đề gặp phải",
-                label_execution: "Hạng mục thực hiện",
+                label_execution: "Hạng mục thực hiện & Kết quả",
+                badge_top13: "Top 1-3 ↗",
+                
+                // VIB
                 vib_tag: "Tài chính - Ngân hàng",
+                vib_date: "03/2025 – 09/2025",
                 vib_title: "Ngân hàng Quốc Tế VIB",
                 vib_goal: "Giữ ổn định lượng truy cập tự nhiên và duy trì thứ hạng cho 550 từ khóa mục tiêu trong Top tìm kiếm.",
                 vib_challenge: "Traffic tự nhiên đang giảm, nhiều từ khóa chính bị rớt hạng, các trang đích (landing page) thiếu nội dung trọng tâm.",
@@ -1012,7 +686,10 @@
                 vib_step_3: "Viết lại tiêu đề, thẻ mô tả (meta description), mở rộng nội dung bài viết và làm thêm các trang đích mới.",
                 vib_step_4: "Triển khai 30 backlink từ các báo lớn, diễn đàn tài chính và hệ thống social entity.",
                 vib_step_5: "Theo dõi số liệu qua GA4 và Google Search Console để điều chỉnh kịp thời.",
+
+                // CellphoneS
                 cps_tag: "Thương mại điện tử - Công nghệ",
+                cps_date: "09/2025 – 07/2026",
                 cps_title: "Hệ thống bán lẻ CellphoneS (Sforum)",
                 cps_goal: "Mở rộng độ phủ từ khóa mảng điện thoại iPhone & Android trên chuyên trang Sforum, đẩy các bài viết đang ở trang 2-3 lên Top 3 Google.",
                 cps_challenge: "Ngành bán lẻ di động cạnh tranh rất gắt với Thế Giới Di Động, FPT Shop; nhiều bài viết cũ bị tụt hạng do thông tin lỗi thời hoặc thiếu chiều sâu.",
@@ -1020,23 +697,35 @@
                 cps_step_2: "Rà soát và viết bổ sung thông tin mới (Content Refresh) cho các bài viết thứ hạng thấp, chuẩn hóa tiêu đề, thẻ mô tả, alt ảnh và internal link.",
                 cps_step_3: "Ứng dụng câu lệnh AI (Claude, ChatGPT) để rút ngắn 50% thời gian nghiên cứu chủ đề và lên cấu trúc bài viết.",
                 cps_step_4: "Kết quả thực tế: Kéo thành công 252 từ khóa mục tiêu lọt vào Top 1 – Top 3 Google.",
-                cps_proof_label: "Kiểm chứng nhanh bài viết đang giữ Top 1-3 trên Google (Bấm để kiểm tra trực tiếp):",
+                cps_proof_label: "Kiểm chứng nhanh bài viết đang giữ Top 1-3 trên Google:",
                 cps_view_all_proof: "Xem chi tiết trong Slide →",
+                cps_proof_q1: "🔍 'so sánh ios và android'",
+                cps_proof_q2: "🔍 'cách biến android thành ios'",
+
+                // MerPerle
                 mp_tag: "Du lịch - Khách sạn",
+                mp_date: "03/2025 – 09/2025",
+                mp_title: "MerPerle NuiSam Resort",
                 mp_goal: "Tăng lượng truy cập, đưa 75 từ khóa vào Top 10 và tăng hiển thị thương hiệu trên Google Maps.",
                 mp_challenge: "Website mới làm, tốc độ tải trang chậm, điểm uy tín tên miền (Domain Authority) còn thấp.",
                 mp_step_1: "Kiểm tra lỗi bằng Screaming Frog, nén dung lượng ảnh, cải thiện tốc độ tải trang và cài đặt Schema Markup, Yoast SEO.",
                 mp_step_2: "Sắp xếp lại bài viết theo cụm chủ đề (Topic Cluster), chỉnh lại thẻ H1-H3, URL và gắn liên kết nội bộ giữa các bài.",
                 mp_step_3: "Xây dựng backlink liên quan ngành du lịch, lọc và chặn (disavow) các liên kết rác trỏ về web.",
                 mp_step_4: "Tối ưu hồ sơ Google My Business để khách dễ tìm thấy resort trên Google Maps.",
+
+                // Ô Tô Hoàng Kim
                 hk_tag: "Phụ kiện & Dịch vụ Ô tô",
+                hk_date: "03/2024 – 02/2025",
+                hk_title: "Ô Tô Hoàng Kim",
                 hk_goal: "Đưa nhóm từ khóa chính vào Top 5 Google, làm lại nền tảng SEO cho website và giữ chân người đọc lâu hơn.",
                 hk_challenge: "Website chưa từng làm SEO, bài viết rời rạc, danh mục sản phẩm chưa tối ưu trong khi ngành phụ kiện ô tô cạnh tranh cao.",
                 hk_step_1: "Chọn nhóm từ khóa dài (long-tail) ít cạnh tranh để lấy traffic trước, đồng thời sắp xếp lại danh mục sản phẩm và blog.",
                 hk_step_2: "Cài Schema cho sản phẩm, dịch vụ và đánh giá; sửa Sitemap, Robots.txt và khắc phục 95% lỗi kỹ thuật.",
-                hk_step_3: "Đề xuất chỉnh lại giao diện trang sản phẩm dễ nhìn hơn, giúp giảm tỷ lệ thoát trang từ 55% xuống còn 32%. ",
-                hk_step_4: "Đi backlink trên các diễn đàn ô tô, mạng xã hội; kết quả phục hồi 150% traffic và đưa từ khóa chính lên Top 3.",
+                hk_step_3: "Đề xuất chỉnh lại giao diện trang sản phẩm dễ nhìn hơn, giúp giảm tỷ lệ thoát trang từ 55% xuống còn 32%.",
+                hk_step_4: "Đi backlink trên các diễn đàn ô tô, mạng xã hội; kết quả phục hồi 150% traffic và đưa từ khóa chính vào Top 3.",
                 hk_step_5: "Tạo file Google Sheets kết nối trực tiếp với Search Console để tự động cập nhật thứ hạng từ khóa hàng ngày.",
+
+                // Kinh nghiệm
                 sec_exp_title: "Quá trình làm việc",
                 exp_1_time: "09/2025 – Hiện tại",
                 exp_1_role: "SEO Specialist (Mảng Off-page & Hệ thống site)",
@@ -1044,21 +733,27 @@
                 exp_1_b2: "Xây dựng và quản lý dàn web vệ tinh để đẩy sức mạnh về trang chính, giúp chỉ số UR/DR tăng 35% ổn định.",
                 exp_1_b3: "Tìm kiếm và lọc tên miền mới dựa trên độ uy tín, lượng truy cập thật và sự liên quan chủ đề trước khi đặt link; phân bổ tỷ lệ anchor text tự nhiên.",
                 exp_1_b4: "Kiểm soát liên kết nội bộ và liên kết ngoài, theo dõi trên Google Search Console để lọc bỏ sớm các link rác.",
+                exp_2_time: "09/2025 – 07/2026",
                 exp_2_role: "SEO Executive (Part-time)",
                 exp_2_b1: "Nghiên cứu từ khóa mảng điện thoại iPhone & Android, lập dàn ý chi tiết (Outline) bám sát nhu cầu tìm kiếm thực tế của người mua.",
                 exp_2_b2: "Tối ưu On-page cho bài viết: tiêu đề, mô tả, thẻ alt ảnh và gắn liên kết nội bộ hợp ngữ cảnh.",
                 exp_2_b3: "Rà soát và viết bổ sung thông tin cho các bài đang ở trang 2-3, kết quả kéo được 252 từ khóa lên Top 3 Google.",
                 exp_2_b4: "Kết hợp công cụ SEO và câu lệnh AI (Prompt) để giảm 50% thời gian tìm hiểu chủ đề và lên sườn bài.",
+                exp_3_time: "03/2025 – 09/2025",
                 exp_3_role: "SEO Executive",
                 exp_3_b1: "Lập kế hoạch và trực tiếp làm SEO tổng thể cho khách hàng ngành Tài chính và Du lịch - Khách sạn (Ngân hàng VIB, MerPerle NuiSam) từ khâu kiểm tra web đến khi tăng trưởng.",
                 exp_3_b2: "Xem xét hành vi người dùng trên trang và chỉnh lại bố cục trang đích, giúp tăng 22% tỷ lệ chuyển đổi đăng ký dịch vụ và mua hàng.",
                 exp_3_b3: "Hướng dẫn công việc, chia bài và kiểm duyệt chất lượng cho nhóm Thực tập sinh SEO và Cộng tác viên Content theo đúng KPI.",
                 exp_3_b4: "Lấy số liệu từ Looker Studio, GA4 và Search Console để làm báo cáo định kỳ gửi quản lý và khách hàng.",
+                exp_4_company: "Ô Tô Hoàng Kim",
+                exp_4_time: "03/2024 – 02/2025",
                 exp_4_role: "SEO Fresher",
                 exp_4_b1: "Phụ trách mảng kỹ thuật: cài đặt Schema Markup, chỉnh Sitemap, Robots.txt, thẻ Heading và xử lý 95% lỗi kỹ thuật trên web.",
                 exp_4_b2: "Tạo hệ thống tài khoản mạng xã hội (Social Stack) và đi backlink trên diễn đàn, blog; giúp web phục hồi 150% lượng truy cập và đưa từ khóa chính lên Top 3.",
                 exp_4_b3: "Đề xuất sửa lại giao diện trang sản phẩm/dịch vụ, giảm tỷ lệ thoát trang từ 55% xuống 32%.",
                 exp_4_b4: "Thiết lập bảng theo dõi thứ hạng từ khóa tự động trên Google Sheets nối trực tiếp với dữ liệu Search Console.",
+
+                // Kỹ năng & Học vấn
                 sec_skills_title: "Kỹ năng & Công cụ làm việc",
                 skill_1_title: "Chuyên môn SEO",
                 skill_1_desc: "Kiểm tra kỹ thuật (Sitemap, Robots.txt, Schema), tối ưu On-page (Topic Cluster, từ khóa ngữ nghĩa LSI, đúng mục đích tìm kiếm), Off-page (Entity, Social Stack, Link Building 3 tầng).",
@@ -1073,21 +768,26 @@
                 sec_cert_title: "Chứng chỉ",
                 cert_1: "Google Ads Cơ Bản",
                 contact_title: "Thông tin liên hệ",
-                contact_desc: "Anh/chị cần trao đổi thêm về kinh nghiệm làm việc hoặc các dự án SEO bên trên có thể liên hệ trực tiếp qua số điện thoại hoặc email."
+                contact_desc: "Anh/chị cần trao đổi thêm về kinh nghiệm làm việc hoặc các dự án SEO bên trên có thể liên hệ trực tiếp qua số điện thoại hoặc email.",
+                modal_tab_deck: "Slide Đa Ngữ",
+                modal_tab_embed: "Google Slides",
+                slide_btn_prev: "Slide trước",
+                slide_btn_next: "Slide tiếp theo"
             },
             en: {
+                nav_brand: "Doan Kien Luc",
                 btn_export_pdf: "Export PDF",
                 nav_projects: "Projects",
                 nav_exp: "Experience",
                 nav_skills: "Skills",
                 nav_edu: "Education",
                 nav_contact: "Contact",
+                hero_role_badge: "SEO Specialist",
                 hero_exp_badge: "2+ Years Experience",
                 hero_name: "Doan Kien Luc",
-                hero_bio_1: "SEO Specialist with over 2 years of hands-on experience across Finance (VIB Bank), E-commerce (CellphoneS), Hospitality (MerPerle), and Automotive Accessories (O To Hoang Kim). My daily work covers technical website audits, on-page content structuring, and link building / satellite site management.",
-                hero_bio_2: "Experienced in leading large SEO projects and coordinating content writers and SEO interns to meet growth targets. I use Claude, ChatGPT, and Gemini in my workflow to cut outline creation and basic HTML/CSS troubleshooting time by 80%. Conversational in Chinese (HSK 3) and basic English. Working toward a data-focused SEO Team Leader or Digital Marketing Manager role.",
+                hero_bio_1: "SEO Specialist with over 2 years of hands-on experience across Finance (VIB Bank), E-commerce (CellphoneS), Hospitality (MerPerle Resort), and Automotive Accessories (Hoang Kim Auto). My daily workflow includes technical website audits, on-page architecture, and tiered backlink / satellite site management.",
+                hero_bio_2: "Experienced in leading large SEO projects, delegating tasks and tracking performance for content writers and SEO interns. I leverage Claude, ChatGPT, and Gemini to cut outline creation and basic HTML/CSS adjustments by 80%. Conversational in Chinese (HSK 3) and basic English. Aiming for an SEO Team Leader or Digital Marketing Manager role.",
                 btn_view_projects: "View Case Studies",
-                btn_contact: "Contact Info",
                 card_name: "Doan Kien Luc",
                 card_dob: "DOB: 04/10/2000",
                 card_loc: "Minh Phung Ward, HCMC (Former Dist. 11)",
@@ -1099,168 +799,223 @@
                 stat_hk: "Traffic Recovery (Hoang Kim)",
                 stat_cr: "Landing Page Conversion Rate",
                 sec_projects_title: "Selected SEO Case Studies",
-                sec_projects_desc: "Project goals, actual challenges, execution steps, and interactive slide decks right on the page.",
+                sec_projects_desc: "Project objectives, real challenges, and execution outcomes with integrated slide decks for each case.",
                 btn_slide_preview: "Preview Slides Here",
                 label_goal: "Objective",
                 label_challenge: "Challenges",
-                label_execution: "What I Did",
+                label_execution: "What I Did & Outcomes",
+                badge_top13: "Top 1-3 ↗",
+
+                // VIB
                 vib_tag: "Finance & Banking",
+                vib_date: "03/2025 – 09/2025",
                 vib_title: "VIB International Bank",
-                vib_goal: "Stabilize organic traffic and maintain top search rankings for 550 target keywords.",
-                vib_challenge: "Declining organic traffic, ranking drops on core keywords, and landing pages lacking focused content.",
-                vib_step_1: "Analyzed competitor keywords and content gaps using SEMrush.",
-                vib_step_2: "Crawled the full site with Screaming Frog to fix crawl errors, URL structure, and page speed.",
-                vib_step_3: "Rewrote titles and meta descriptions, expanded topic coverage, and built new landing pages.",
-                vib_step_4: "Built 30 backlinks from major news sites, finance forums, and social entity profiles.",
-                vib_step_5: "Monitored performance via GA4 and Google Search Console for ongoing adjustments.",
-                cps_tag: "E-commerce & Tech Retail",
+                vib_goal: "Stabilize organic traffic and maintain top rankings for 550 target keywords.",
+                vib_challenge: "Declining organic traffic, ranking drops on core financial terms, and landing pages lacking focused keyword depth.",
+                vib_step_1: "Analyzed competitor keyword gaps and search volumes using SEMrush.",
+                vib_step_2: "Audited entire site via Screaming Frog, resolved crawl issues, URL redirects, and page speed bottlenecks.",
+                vib_step_3: "Rewrote titles, meta descriptions, expanded in-depth content, and created targeted landing pages.",
+                vib_step_4: "Acquired 30 backlinks from major press outlets, financial forums, and social entity profiles.",
+                vib_step_5: "Monitored analytics via GA4 and Google Search Console for real-time iterative optimization.",
+
+                // CellphoneS
+                cps_tag: "E-commerce & Tech",
+                cps_date: "09/2025 – 07/2026",
                 cps_title: "CellphoneS Retail System (Sforum)",
-                cps_goal: "Expand keyword coverage for iPhone & Android topics on Sforum and push underperforming articles from page 2-3 into Google's Top 3.",
-                cps_challenge: "Fierce competition from major tech retailers (The Gioi Di Dong, FPT Shop) and ranking drops on older articles due to outdated information.",
-                cps_step_1: "Researched iPhone & Android keyword clusters and built detailed outlines matching real buyer search intent.",
-                cps_step_2: "Audited and refreshed low-ranking articles, standardizing titles, meta descriptions, image alt tags, and contextual internal links.",
-                cps_step_3: "Used Claude and ChatGPT prompts to reduce topic research and outlining time by 50%.",
-                cps_step_4: "Result: Brought 252 target keywords into Google's Top 1–3.",
+                cps_goal: "Expand keyword footprint for iPhone & Android categories on Sforum; push page 2-3 ranking posts into Google Top 3.",
+                cps_challenge: "Fierce competition from major retail giants (The Gioi Di Dong, FPT Shop); older posts dropped rank due to stale specs or lack of depth.",
+                cps_step_1: "Segmented iPhone & Android keyword clusters, designing detailed outlines aligned with buyer search intent.",
+                cps_step_2: "Audited and refreshed low-ranking articles, standardizing titles, meta tags, alt text, and contextual internal links.",
+                cps_step_3: "Applied custom AI prompts (Claude, ChatGPT) to cut topic research and structural outlining time by 50%.",
+                cps_step_4: "Result: Successfully ranked 252 target keywords into Google's Top 1 – Top 3 positions.",
                 cps_proof_label: "Live Google SERP Verification (Click to verify live on Google):",
                 cps_view_all_proof: "View details in Slides →",
+                cps_proof_q1: "🔍 'compare ios and android'",
+                cps_proof_q2: "🔍 'make android look like ios'",
+
+                // MerPerle
                 mp_tag: "Travel & Hospitality",
-                mp_goal: "Grow organic traffic, push 75 keywords into the Top 10, and improve visibility on Google Maps.",
-                mp_challenge: "Newly launched website, slow loading speed, and low Domain Authority.",
-                mp_step_1: "Ran technical audits via Screaming Frog, compressed images, improved page speed, and set up Schema Markup & Yoast SEO.",
-                mp_step_2: "Restructured content into Topic Clusters, fixed H1-H3 tags, URLs, and internal linking.",
-                mp_step_3: "Acquired relevant travel backlinks and disavowed spammy links pointing to the domain.",
-                mp_step_4: "Optimized Google My Business for local search visibility on Google Maps.",
-                hk_tag: "Automotive Accessories",
-                hk_goal: "Rank core keywords in Google's Top 5, build a solid SEO foundation, and improve user engagement.",
-                hk_challenge: "No prior SEO work, unorganized content, unoptimized product categories, and high industry competition.",
-                hk_step_1: "Targeted low-competition long-tail keywords for early traffic wins while restructuring product categories and blog posts.",
-                hk_step_2: "Implemented Product, Service, and Review Schema; optimized Sitemap, Robots.txt, and fixed 95% of technical errors.",
-                hk_step_3: "Suggested UI improvements on product/service pages, reducing bounce rate from 55% to 32%.",
-                hk_step_4: "Built backlinks across automotive forums and social platforms, recovering 150% traffic and pushing core keywords into Top 3.",
-                hk_step_5: "Created an automated keyword tracking sheet in Google Sheets connected directly to Search Console.",
+                mp_date: "03/2025 – 09/2025",
+                mp_title: "MerPerle NuiSam Resort",
+                mp_goal: "Increase organic traffic, rank 75 keywords in Top 10, and strengthen local visibility on Google Maps.",
+                mp_challenge: "Newly launched website, sluggish load times, and low initial Domain Authority.",
+                mp_step_1: "Ran deep Screaming Frog audit, compressed visual assets, configured Schema Markup and Yoast SEO.",
+                mp_step_2: "Restructured content into Topic Clusters, standardizing H1-H3 hierarchy, clean URLs, and contextual internal links.",
+                mp_step_3: "Acquired authoritative travel links while disavowing spammy backlinks pointing to the domain.",
+                mp_step_4: "Optimized Google My Business profile to dominate local resort queries on Google Maps.",
+
+                // Ô Tô Hoàng Kim
+                hk_tag: "Automotive Accessories & Services",
+                hk_date: "03/2024 – 02/2025",
+                hk_title: "Hoang Kim Auto Accessories",
+                hk_goal: "Push core commercial keywords into Top 5, build a clean SEO foundation, and improve session duration.",
+                hk_challenge: "No previous SEO strategy, disorganized articles, unoptimized product categories, and tough competitor landscape.",
+                hk_step_1: "Targeted low-competition long-tail keywords for fast traffic gains while restructuring product catalogs and blog hubs.",
+                hk_step_2: "Implemented Schema for Product, Service, and Reviews; repaired Sitemap, Robots.txt, resolving 95% of technical issues.",
+                hk_step_3: "Recommended product page UX/UI refinements, slashing bounce rate from 55% down to 32%.",
+                hk_step_4: "Built links across auto forums and social stacks; recovered 150% traffic and pushed primary terms into Top 3.",
+                hk_step_5: "Built an automated Google Sheets rank tracking sheet connected directly to Search Console API.",
+
+                // Experience
                 sec_exp_title: "Work Experience",
                 exp_1_time: "09/2025 – Present",
                 exp_1_role: "SEO Specialist (Off-page & Satellite Sites)",
-                exp_1_b1: "Set up and optimize WordPress websites, customize themes, and configure plugins. Use Claude and ChatGPT to assist with HTML/CSS adjustments.",
-                exp_1_b2: "Build and manage satellite websites to pass authority to main money sites, increasing UR/DR metrics by 35%.",
-                exp_1_b3: "Source and vet expired/new domains based on authority, real traffic, and topical relevance; manage natural anchor text ratios.",
-                exp_1_b4: "Monitor internal and external links and use Google Search Console to disavow spam links early.",
+                exp_1_b1: "Built and optimized WordPress websites from scratch, customized themes, and configured key plugins. Used AI to assist HTML/CSS technical fixes.",
+                exp_1_b2: "Constructed and operated satellite site tiers to pass link equity, sustainably boosting UR/DR metrics by 35%.",
+                exp_1_b3: "Identified and vetted prospective domains by authority, verified organic traffic, and relevance; maintained natural anchor text distribution.",
+                exp_1_b4: "Strictly audited internal and external links; continuously monitored Google Search Console to disavow toxic links early.",
+                exp_2_time: "09/2025 – 07/2026",
                 exp_2_role: "SEO Executive (Part-time)",
-                exp_2_b1: "Researched iPhone & Android keyword sets and created detailed outlines aligned with buyer search intent.",
-                exp_2_b2: "Standardized on-page elements including titles, meta descriptions, image alt tags, and contextual internal links.",
-                exp_2_b3: "Updated underperforming articles, helping bring 252 keywords into Google's Top 3.",
-                exp_2_b4: "Combined SEO tools and AI prompting to cut topic research and outlining time by 50%.",
+                exp_2_b1: "Researched iPhone & Android phone keyword clusters; built E-E-A-T and Helpful Content outlines matching real search intent.",
+                exp_2_b2: "Standardized on-page factors: titles, descriptions, image alt tags, and contextual internal linking.",
+                exp_2_b3: "Audited and enriched lower-ranking posts, pulling 252 keywords directly into Google's Top 3.",
+                exp_2_b4: "Integrated SEO tooling and AI prompt engineering to decrease outlining and topic research time by 50%.",
+                exp_3_time: "03/2025 – 09/2025",
                 exp_3_role: "SEO Executive",
-                exp_3_b1: "Planned and executed full-stack SEO campaigns for Finance and Hospitality clients (VIB, MerPerle NuiSam) from initial audit to traffic growth.",
-                exp_3_b2: "Analyzed user behavior flows and refined landing pages, increasing service sign-up and purchase conversion rates by 22%.",
-                exp_3_b3: "Trained, assigned tasks, and reviewed output for SEO Interns and freelance content writers to hit project KPIs.",
-                exp_3_b4: "Pulled data from Looker Studio, GA4, and Search Console for regular client and management reporting.",
+                exp_3_b1: "Strategized and executed comprehensive SEO for major Finance and Hospitality accounts (VIB Bank, MerPerle NuiSam) from audit to growth.",
+                exp_3_b2: "Analyzed on-site visitor click streams and redesigned landing page layouts, generating a 22% increase in lead conversion.",
+                exp_3_b3: "Supervised, assigned tasks, and reviewed work for SEO interns and freelance writers according to monthly KPIs.",
+                exp_3_b4: "Extracted data from Looker Studio, GA4, and Search Console to produce actionable progress reports for management and clients.",
+                exp_4_company: "Hoang Kim Auto",
+                exp_4_time: "03/2024 – 02/2025",
                 exp_4_role: "SEO Fresher",
-                exp_4_b1: "Handled technical SEO setups: Schema Markup, Sitemap, Robots.txt, heading structure, resolving 95% of technical issues.",
-                exp_4_b2: "Rolled out social entity stacks and multi-channel backlinks (forums, blogs), recovering 150% traffic and ranking core keywords in Top 3.",
-                exp_4_b3: "Proposed product/service page layout adjustments that lowered bounce rate from 55% to 32%.",
-                exp_4_b4: "Built an automated Google Sheets rank tracker integrated with Google Search Console.",
-                sec_skills_title: "Skills & Tools",
+                exp_4_b1: "Led technical fixes: Schema Markup setup, Sitemap and Robots.txt optimization, heading hierarchy, eliminating 95% of technical crawl errors.",
+                exp_4_b2: "Deployed multi-channel social entity stacks and forum backlinks, securing a 150% organic traffic recovery and Top 3 keyword rankings.",
+                exp_4_b3: "Proposed UX layout revisions across service pages, reducing user bounce rate from 55% down to 32%.",
+                exp_4_b4: "Engineered an automated keyword rank tracker inside Google Sheets synced with Google Search Console data.",
+
+                // Skills & Education
+                sec_skills_title: "Skills & Toolset",
                 skill_1_title: "SEO Execution",
-                skill_1_desc: "Technical Audit (Sitemap, Robots.txt, Schema), On-page (Topic Cluster, LSI keywords, Search Intent), Off-page (Entity Building, Social Stack, Tiered Link Building).",
-                skill_2_title: "Data & SEO Tools",
-                skill_2_desc: "Google Search Console, Google Analytics 4 (GA4), Looker Studio, SEMrush, Screaming Frog, Google My Business, Basic Google Ads.",
-                skill_3_title: "Web & AI Workflow",
-                skill_3_desc: "WordPress, basic HTML/CSS, Litespeed Cache, Rank Math, Yoast SEO. Prompting with Claude, ChatGPT (Codex), and Gemini for outlines, custom code, and content editing.",
+                skill_1_desc: "Technical Audits (Sitemap, Robots.txt, Schema), On-page (Topic Clusters, LSI keywords, Search Intent), Off-page (Entity Stacking, Tiered Link Building).",
+                skill_2_title: "Analytics & Tools",
+                skill_2_desc: "Google Search Console, Google Analytics 4 (GA4), Looker Studio, SEMrush, Screaming Frog, Google My Business, Google Ads Fundamentals.",
+                skill_3_title: "Web CMS & AI Workflow",
+                skill_3_desc: "WordPress, fundamental HTML/CSS, Litespeed Cache, Rank Math, Yoast SEO. Prompt engineering with Claude, ChatGPT, and Gemini for outlines and code.",
                 sec_edu_title: "Education",
                 edu_school: "Ho Chi Minh City College of Economics",
                 edu_major: "Major: Business Administration",
-                edu_grade: "Classification: Good • GPA: 3.0 / 4.0",
+                edu_grade: "Graduation: Good • GPA: 3.0 / 4.0",
                 sec_cert_title: "Certifications",
                 cert_1: "Google Ads Fundamentals",
                 contact_title: "Contact Information",
-                contact_desc: "Feel free to reach out via phone or email if you would like to discuss my work experience or any of the SEO projects above."
+                contact_desc: "Please reach out directly via phone or email if you would like to discuss my SEO background or any of the case studies above.",
+                modal_tab_deck: "Interactive Deck",
+                modal_tab_embed: "Google Slides",
+                slide_btn_prev: "Previous Slide",
+                slide_btn_next: "Next Slide"
             },
             zh: {
+                nav_brand: "段建力 (Đoàn Kiến Lực)",
                 btn_export_pdf: "导出 PDF",
                 nav_projects: "SEO 项目",
                 nav_exp: "工作经历",
                 nav_skills: "专业技能",
                 nav_edu: "教育背景",
                 nav_contact: "联系方式",
+                hero_role_badge: "SEO 专员",
                 hero_exp_badge: "2年以上实战经验",
                 hero_name: "段建力 (Đoàn Kiến Lực)",
-                hero_bio_1: "拥有2年以上 SEO 实战经验，服务过金融银行（VIB 银行）、电子商务（CellphoneS）、旅游度假村（MerPerle）及汽车配件（皇金汽车）等行业。日常负责网站技术诊断（Technical Audit）、站内内容架构（On-page）以及外链与卫星站群建设。",
-                hero_bio_2: "曾独立负责大型项目，分配并管理内容团队与实习生按时完成指标。熟练使用 Claude、ChatGPT 和 Gemini 编写提示词，将大纲撰写与基础 HTML/CSS 代码处理时间缩短约 80%。具备良好的中文沟通能力（相当于 HSK 3）及基础英语。职业目标是成为以数据为核心的 SEO 团队主管或数字营销经理。",
+                hero_bio_1: "拥有2年以上 SEO 实战经验，深耕金融银行（VIB 国际银行）、电子商务（CellphoneS）、旅游度假（MerPerle 纽森度假村）及汽车配件（黄金汽车）等领域。日常负责网站技术诊断（Technical Audit）、站内内容架构（On-page）以及高质量外链与卫星站群建设。",
+                hero_bio_2: "曾独立负责重点项目，统筹并辅导内容写手与实习生按时达成增长目标。熟练使用 Claude、ChatGPT 和 Gemini 编写提示词，将大纲撰写与基础 HTML/CSS 代码处理时间缩短约 80%。具备良好的中文沟通能力（普通话良好 / HSK 3）及基础英语。职业目标是成为以数据为驱动的 SEO 团队主管或数字营销经理。",
                 btn_view_projects: "查看项目案例 (Case Study)",
-                btn_contact: "联系我",
                 card_name: "段建力 (Đoàn Kiến Lực)",
                 card_dob: "出生日期: 2000/10/04",
                 card_loc: "胡志明市明奉坊 (原第11郡)",
                 label_phone: "电话:",
                 label_lang: "语言能力:",
-                val_lang: "中文 (HSK 3 良好), 英语 (基础)",
+                val_lang: "中文普通话 (良好 / HSK 3), 英语 (基础)",
                 stat_vib: "保持排名前列词数 (VIB)",
                 stat_cps: "谷歌前3名关键词 (CellphoneS)",
-                stat_hk: "自然流量恢复 (皇金汽车)",
+                stat_hk: "自然流量恢复 (黄金汽车)",
                 stat_cr: "落地页转化率提升",
                 sec_projects_title: "代表性 SEO 项目案例",
-                sec_projects_desc: "各项目的目标、实际问题、执行细节以及页面内置演示文稿预览。",
+                sec_projects_desc: "各项目的目标、实际面临问题、执行细节以及页面内置演示文稿展示。",
                 btn_slide_preview: "在线预览演示文稿",
                 label_goal: "项目目标",
                 label_challenge: "面临问题",
-                label_execution: "具体执行",
+                label_execution: "具体执行与成果",
+                badge_top13: "Top 1-3 ↗",
+
+                // VIB
                 vib_tag: "金融与银行",
+                vib_date: "2025/03 – 2025/09",
                 vib_title: "VIB 国际银行 (VIB Bank)",
                 vib_goal: "稳定网站自然流量，保持 550 个目标关键词在搜索结果前列的排名。",
-                vib_challenge: "自然流量出现下滑，多个核心关键词掉排名，部分落地页缺乏核心内容。",
-                vib_step_1: "使用 SEMrush 分析竞争对手关键词，寻找可扩展的内容方向。",
-                vib_step_2: "使用 Screaming Frog 扫描全站，修复抓取错误、URL 结构并提升加载速度。",
-                vib_step_3: "重写标题与描述标签（Meta Description），扩展文章主题并新建落地页。",
-                vib_step_4: "在主流新闻媒体、金融论坛及社交平台建设 30 条高质量外链。",
-                vib_step_5: "通过 GA4 和 Google Search Console 持续跟踪数据并及时调整。",
+                vib_challenge: "自然流量出现下滑，多个核心金融关键词掉出首页，部分落地页缺乏重点内容。",
+                vib_step_1: "使用 SEMrush 深入分析竞争对手关键词缺口与搜索热度。",
+                vib_step_2: "使用 Screaming Frog 扫描全站，排查抓取错误、URL 结构并优化页面加载速度。",
+                vib_step_3: "重写标题与描述标签（Meta Description），丰富文章深度并新建落地页。",
+                vib_step_4: "在主流新闻媒体、金融垂直论坛及社交平台建设 30 条高质量外链。",
+                vib_step_5: "通过 GA4 和 Google Search Console 持续监控数据并进行动态调整。",
+
+                // CellphoneS
                 cps_tag: "电子商务与科技零售",
+                cps_date: "2025/09 – 2026/07",
                 cps_title: "CellphoneS 手机零售系统 (Sforum)",
-                cps_goal: "扩大 Sforum 科技专栏在 iPhone 与安卓领域的关键词覆盖，将排在第 2-3 页的文章推入 Google 前 3 名。",
-                cps_challenge: "手机零售行业竞争极其激烈（对手包括 Thế Giới Di Động、FPT Shop），部分旧文章因内容过时导致排名下滑。",
-                cps_step_1: "深入研究 iPhone 与安卓关键词，编写贴合用户真实搜索意图的详细文章大纲（Outline）。",
-                cps_step_2: "盘点并更新低排名文章内容（Content Refresh），规范标题、描述、图片 Alt 标签与上下文内链。",
+                cps_goal: "扩大 Sforum 科技专栏在 iPhone 与安卓手机领域的关键词覆盖，将排在第 2-3 页的文章推入 Google 前 3 名。",
+                cps_challenge: "手机零售行业竞争极其激烈（对手包括 Thế Giới Di Động、FPT Shop），部分旧文章因信息滞后导致排名下滑。",
+                cps_step_1: "深入研究 iPhone 与安卓手机关键词，编写符合真实搜索意图的详细文章大纲（Outline）。",
+                cps_step_2: "盘点并重构低排名文章内容（Content Refresh），规范标题、描述、图片 Alt 标签与上下文内链。",
                 cps_step_3: "结合 Claude 与 ChatGPT 提示词，将选题调研与大纲搭建时间缩短 50%。",
                 cps_step_4: "实际成果：成功将 252 个目标关键词拉升至 Google 第 1–3 名。",
-                cps_proof_label: "快速验证 Google 前 3 名文章（点击直接在 Google 搜索验证）：",
+                cps_proof_label: "快速验证 Google 前 3 名文章（点击直接在 Google 验证）：",
                 cps_view_all_proof: "在幻灯片中查看详情 →",
+                cps_proof_q1: "🔍 'iOS 与 Android 对比'",
+                cps_proof_q2: "🔍 '安卓变苹果系统'",
+
+                // MerPerle
                 mp_tag: "旅游与度假酒店",
+                mp_date: "2025/03 – 2025/09",
+                mp_title: "MerPerle 纽森度假村 (MerPerle NuiSam Resort)",
                 mp_goal: "提升自然流量，将 75 个目标关键词推入前 10 名，并提高在 Google 地图上的品牌曝光。",
-                mp_challenge: "新上线网站，页面加载速度较慢，域名权重（DA）较低。",
-                mp_step_1: "通过 Screaming Frog 排查技术问题，压缩图片、提升速度，配置 Schema 与 Yoast SEO。",
+                mp_challenge: "新上线网站，页面加载速度较慢，域名初始权重（DA）较低。",
+                mp_step_1: "通过 Screaming Frog 排查技术问题，压缩图片、提升速度，配置 Schema 结构化数据与 Yoast SEO。",
                 mp_step_2: "按主题集群（Topic Cluster）重组内容，规范 H1-H3 标签、URL 及站内链接。",
-                mp_step_3: "建设旅游行业相关外链，排查并拒绝（Disavow）垃圾外链。",
+                mp_step_3: "建设旅游行业相关优质外链，排查并拒绝（Disavow）垃圾外链。",
                 mp_step_4: "优化 Google 商家资料（Google My Business），提升本地搜索排名。",
+
+                // Ô Tô Hoàng Kim
                 hk_tag: "汽车配件与服务",
-                hk_goal: "将核心关键词推入 Google 前 5 名，搭建完整的网站 SEO 基础并改善阅读体验。",
-                hk_challenge: "网站此前未做过 SEO，内容零散，产品分类未优化，且汽车配件行业竞争激烈。",
+                hk_date: "2024/03 – 2025/02",
+                hk_title: "黄金汽车配件与服务 (Ô Tô Hoàng Kim)",
+                hk_goal: "将核心关键词推入 Google 前 5 名，搭建完整的网站 SEO 基础并改善用户停留时间。",
+                hk_challenge: "网站此前未做过系统 SEO，内容零散，产品分类未优化，且汽车配件行业竞争激烈。",
                 hk_step_1: "优先布局竞争较小的长尾词获取早期流量，同时重新规划产品分类与博客结构。",
                 hk_step_2: "配置产品、服务与评价 Schema；优化 Sitemap、Robots.txt 并修复 95% 的技术错误。",
                 hk_step_3: "建议改进产品与服务页面排版，使跳出率从 55% 降至 32%。",
                 hk_step_4: "在汽车论坛与社交平台布局外链，实现流量恢复 150%，核心词进入前 3 名。",
-                hk_step_5: "搭建连接 Search Console 的 Google Sheets 自动化表格，每日自动更新关键词排名。",
+                hk_step_5: "搭建连接 Search Console 数据的 Google Sheets 自动化表格，每日自动更新关键词排名。",
+
+                // Experience
                 sec_exp_title: "工作经历",
                 exp_1_time: "2025/09 – 至今",
                 exp_1_role: "SEO 专员 (侧重站外推广与站群管理)",
-                exp_1_b1: "独立搭建与优化 WordPress 网站，修改主题并配置插件；借助 Claude 和 ChatGPT 处理 HTML/CSS 代码以符合技术规范。",
+                exp_1_b1: "独立搭建与优化 WordPress 网站，修改主题并配置插件；借助 AI 处理 HTML/CSS 代码以符合技术规范。",
                 exp_1_b2: "搭建并运营卫星网站群向主站传递权重，使 UR/DR 指标稳定提升 35%。",
                 exp_1_b3: "根据权威度、真实流量及主题相关性筛选新域名；控制自然的锚文本比例以规避算法风险。",
                 exp_1_b4: "严格管理站内与站外链接，定期通过 Google Search Console 排查并清理垃圾外链。",
+                exp_2_time: "2025/09 – 2026/07",
                 exp_2_role: "SEO 执行专员 (兼职)",
                 exp_2_b1: "研究 iPhone 与安卓手机关键词，编写符合用户搜索意图的详细文章大纲（Outline）。",
                 exp_2_b2: "规范文章站内要素：标题、描述、图片 Alt 标签以及上下文内链。",
                 exp_2_b3: "盘点并补充排名靠后文章的内容质量，成功将 252 个关键词拉升至 Google 前 3 名。",
                 exp_2_b4: "结合 SEO 工具与 AI 提示词，将选题研究与大纲搭建时间缩短 50%。",
+                exp_3_time: "2025/03 – 2025/09",
                 exp_3_role: "SEO 执行专员",
-                exp_3_b1: "为金融及酒店行业客户（VIB 银行、MerPerle 度假村）制定并执行全盘 SEO 方案，涵盖从初期网站诊断到流量增长全过程。",
+                exp_3_b1: "为金融及酒店行业客户（VIB 国际银行、MerPerle 度假村）制定并执行全盘 SEO 方案，涵盖从初期诊断到流量增长全流程。",
                 exp_3_b2: "分析网站用户行为路径并调整落地页，使服务注册与购买转化率提升 22%。",
                 exp_3_b3: "培训并管理 SEO 实习生与兼职内容写手，分配任务并把控进度以确保达成项目 KPI。",
                 exp_3_b4: "从 Looker Studio、GA4 和 Search Console 提取数据，定期向管理层及客户汇报。",
+                exp_4_company: "黄金汽车配件",
+                exp_4_time: "2024/03 – 2025/02",
                 exp_4_role: "SEO 初级专员 (Fresher)",
                 exp_4_b1: "负责技术优化：配置 Schema Markup、优化 Sitemap、Robots.txt、规范标题标签，解决 95% 的网站技术问题。",
                 exp_4_b2: "建立社交媒体矩阵（Social Stack）与多渠道外链（论坛、博客评论），帮助网站恢复 150% 流量并将核心词推入前 3 名。",
                 exp_4_b3: "提出产品与服务页面界面改进建议，将跳出率从 55% 降低至 32%。",
                 exp_4_b4: "制作连接 Search Console 数据的 Google Sheets 自动排名跟踪表。",
+
+                // Skills & Education
                 sec_skills_title: "专业技能与工具",
                 skill_1_title: "SEO 专业能力",
                 skill_1_desc: "技术诊断 (Sitemap, Robots.txt, Schema)、站内优化 (主题集群 Topic Cluster, 语义词 LSI, 搜索意图)、站外推广 (Entity 建设, 社交矩阵, 三层外链建设)。",
@@ -1275,13 +1030,615 @@
                 sec_cert_title: "专业证书",
                 cert_1: "Google Ads 基础认证",
                 contact_title: "联系方式",
-                contact_desc: "如果您希望进一步了解我的工作经历或上述 SEO 项目细节，欢迎直接通过电话或邮件与我联系。"
+                contact_desc: "如果您希望进一步了解我的工作经历或上述 SEO 项目细节，欢迎直接通过电话或邮件与我联系。",
+                modal_tab_deck: "多语演示文稿",
+                modal_tab_embed: "Google 幻灯片",
+                slide_btn_prev: "上一页",
+                slide_btn_next: "下一页"
             }
         };
 
+        // Complete Slide Deck Data for All 4 Projects in VI, EN, and ZH (Simplified)
+        const projectDecks = {
+            vib: {
+                vi: {
+                    tag: "Tài chính - Ngân hàng",
+                    title: "Case Study SEO: Ngân hàng Quốc Tế VIB",
+                    slides: [
+                        {
+                            sub: "Slide 01 / 04 • Bối cảnh & Mục tiêu",
+                            headline: "Tổng quan dự án SEO Ngân hàng Quốc Tế VIB",
+                            cards: [
+                                { label: "Vai trò đảm nhận", val: "SEO Executive", desc: "Trực tiếp lên kế hoạch Audit, tối ưu On-page và triển khai Link Building." },
+                                { label: "Mục tiêu từ khóa", val: "550 Từ khóa mục tiêu", desc: "Giữ vững vị trí trong Top tìm kiếm trước sự cạnh tranh từ các ngân hàng lớn." },
+                                { label: "Phục hồi Traffic", val: "Ổn định & Tăng trưởng", desc: "Khắc phục triệt để đà sụt giảm traffic tự nhiên bằng chiến lược content sâu." }
+                            ],
+                            p1_title: "Bài toán thực tế",
+                            p1_text: "Lưu lượng truy cập tự nhiên có dấu hiệu chững lại, nhiều từ khóa dịch vụ tài chính trọng tâm bị rớt khỏi trang nhất Google, các landing page thiếu nội dung chuyên sâu để giữ chân người tìm kiếm.",
+                            p2_title: "Chiến lược trọng tâm",
+                            p2_text: "Quét sạch lỗi kỹ thuật bằng Screaming Frog, tái cấu trúc nội dung On-page chuẩn E-E-A-T cho ngành tài chính và bổ sung 30 backlink chất lượng từ các trang báo kinh tế lớn."
+                        },
+                        {
+                            sub: "Slide 02 / 04 • Quy trình thực hiện",
+                            headline: "Quy trình 5 bước phục hồi & giữ Top từ khóa",
+                            grid: [
+                                { step: "BƯỚC 1 • NGHIÊN CỨU GAP", title: "Phân tích khoảng trống từ khóa", desc: "Dùng SEMrush bóc tách từ khóa của các ngân hàng đối thủ, tìm các chủ đề người dùng đang quan tâm nhưng web chưa có." },
+                                { step: "BƯỚC 2 • TECHNICAL AUDIT", title: "Sửa lỗi kỹ thuật toàn diện", desc: "Quét Screaming Frog xử lý triệt để lỗi crawl, chuyển hướng URL thừa, tối ưu thẻ canonical và tốc độ tải trang." },
+                                { step: "BƯỚC 3 • TỐI ƯU ON-PAGE", title: "Mở rộng bài viết & Landing Page", desc: "Viết lại Title, Meta description kích thích CTR; bổ sung bài viết giải đáp chi tiết các gói vay, thẻ tín dụng." },
+                                { step: "BƯỚC 4 • LINK BUILDING", title: "30 Backlink báo chí & Social", desc: "Triển khai backlink uy tín từ báo chí kinh tế, diễn đàn tài chính và thiết lập entity đồng bộ thương hiệu." }
+                            ]
+                        },
+                        {
+                            sub: "Slide 03 / 04 • Dữ liệu & Kết quả",
+                            headline: "Kết quả đo lường thực tế trên Google Search",
+                            metrics: [
+                                { num: "550+", label: "Từ khóa mục tiêu giữ vững Top tìm kiếm", detail: "Bao gồm các cụm từ khóa có lượng tìm kiếm lớn ngành ngân hàng" },
+                                { num: "30", label: "Backlink chất lượng cao được triển khai", detail: "Từ các nguồn báo chí chính thống và diễn đàn uy tín" },
+                                { num: "100%", label: "Lỗi thu thập dữ liệu (Crawl) được xử lý", detail: "Điểm kiểm tra kỹ thuật đạt chuẩn SEO ngành tài chính" }
+                            ],
+                            summary_title: "Tác động thực tế đến dự án",
+                            summary_text: "Website lấy lại đà tăng trưởng lượng truy cập tự nhiên, các trang đích sản phẩm tài chính nâng cao độ uy tín (E-E-A-T), hỗ trợ trực tiếp việc đăng ký dịch vụ thẻ và vay tiêu dùng."
+                        },
+                        {
+                            sub: "Slide 04 / 04 • Đúc kết & Công cụ",
+                            headline: "Bộ công cụ & Phương pháp luận áp dụng",
+                            tools: ["SEMrush", "Screaming Frog", "Google Analytics 4 (GA4)", "Google Search Console", "Keyword Tool"],
+                            points: [
+                                "Duy trì kiểm tra định kỳ hàng tuần trên Search Console để phát hiện sớm các từ khóa có biến động.",
+                                "Luôn kết hợp chặt chẽ giữa SEO Technical và nội dung chuyên môn tài chính để được Google đánh giá cao.",
+                                "Phân bổ anchor text backlink tự nhiên, hạn chế spam link để giữ thứ hạng bền vững."
+                            ]
+                        }
+                    ]
+                },
+                en: {
+                    tag: "Finance & Banking",
+                    title: "SEO Case Study: VIB International Bank",
+                    slides: [
+                        {
+                            sub: "Slide 01 / 04 • Context & Objectives",
+                            headline: "VIB Bank Organic Search Performance Overview",
+                            cards: [
+                                { label: "Role", val: "SEO Executive", desc: "Directly handled Technical Audit, On-page restructuring, and link outreach." },
+                                { label: "Keyword Target", val: "550 Target Keywords", desc: "Defend high-competition banking search positions against top tier banks." },
+                                { label: "Traffic Trend", val: "Stabilized & Scaled", desc: "Turned around negative traffic decay via technical fixes & content depth." }
+                            ],
+                            p1_title: "Real-world Problem",
+                            p1_text: "Organic search visits were slumping, several high-intent financial keywords dropped off page 1, and existing landing pages lacked semantic content depth to keep users engaged.",
+                            p2_title: "Strategic Solution",
+                            p2_text: "Complete technical scrub via Screaming Frog, E-E-A-T on-page optimization tailored for financial niches, and 30 authoritative press backlinks."
+                        },
+                        {
+                            sub: "Slide 02 / 04 • Execution Workflow",
+                            headline: "5-Step Workflow for Keyword Recovery & Retention",
+                            grid: [
+                                { step: "STEP 1 • GAP ANALYSIS", title: "Competitor Keyword Research", desc: "Used SEMrush to uncover high-intent queries dominated by competitor banks and missing on VIB's site." },
+                                { step: "STEP 2 • TECHNICAL AUDIT", title: "Comprehensive Site Cleanup", desc: "Crawled site via Screaming Frog to resolve redirect loops, canonical anomalies, and Core Web Vitals speed." },
+                                { step: "STEP 3 • ON-PAGE SCALE", title: "Content Refresh & Landing Pages", desc: "Revamped high-CTR title tags, enriched credit card and loan guides with structured data." },
+                                { step: "STEP 4 • LINK OUTREACH", title: "30 Press & Entity Backlinks", desc: "Acquired high-authority links from business news, finance forums, and brand entity properties." }
+                            ]
+                        },
+                        {
+                            sub: "Slide 03 / 04 • Quantitative Results",
+                            headline: "Measured Outcomes in Google Search",
+                            metrics: [
+                                { num: "550+", label: "Target Keywords Secured in Top Ranks", detail: "Across core personal loans, credit card, and banking queries" },
+                                { num: "30", label: "High-Authority Backlinks Secured", detail: "From legitimate tier-1 press and financial publications" },
+                                { num: "100%", label: "Technical Crawl Issues Resolved", detail: "Site health score maximized for strict financial algorithms" }
+                            ],
+                            summary_title: "Tangible Commercial Impact",
+                            summary_text: "VIB's organic search baseline stabilized and trended upward, strengthening domain authority and driving steady card registration conversions."
+                        },
+                        {
+                            sub: "Slide 04 / 04 • Tools & Key Takeaways",
+                            headline: "Core Tooling & Methodology",
+                            tools: ["SEMrush", "Screaming Frog", "Google Analytics 4 (GA4)", "Google Search Console", "Keyword Tool"],
+                            points: [
+                                "Weekly rank tracking via Google Search Console enabled fast detection of SERP shifts.",
+                                "E-E-A-T compliance is decisive for financial search results (YMYL).",
+                                "Maintained natural anchor text velocity to shield rankings against core algorithm updates."
+                            ]
+                        }
+                    ]
+                },
+                zh: {
+                    tag: "金融与银行",
+                    title: "SEO 项目案例：VIB 国际银行 (VIB Bank)",
+                    slides: [
+                        {
+                            sub: "Slide 01 / 04 • 项目背景与目标",
+                            headline: "VIB 国际银行自然搜索流量优化总览",
+                            cards: [
+                                { label: "负责角色", val: "SEO 执行专员", desc: "统筹技术诊断、站内内容重组及高质量外链拓展。" },
+                                { label: "关键词目标", val: "550 个核心词保排", desc: "在同业大银行竞争中守住重要金融搜索前列排名。" },
+                                { label: "流量趋势", val: "止跌回稳并增长", desc: "通过技术修复和深度内容扭转自然流量下滑势头。" }
+                            ],
+                            p1_title: "实际面临问题",
+                            p1_text: "自然搜索流量出现下滑迹象，多项关键贷款和信用卡词汇掉出首页，现有落地页缺乏深度内容支撑用户停留。",
+                            p2_title: "核心解决方案",
+                            p2_text: "使用 Screaming Frog 清除抓取障碍，按照金融行业 E-E-A-T 规范重构内容，并在主流财经媒体布局 30 条权威外链。"
+                        },
+                        {
+                            sub: "Slide 02 / 04 • 执行流程",
+                            headline: "关键词恢复与排名的 5 步流程",
+                            grid: [
+                                { step: "第 1 步 • 缺口分析", title: "竞品关键词深度挖掘", desc: "使用 SEMrush 分析竞争银行关键词布局，找出未覆盖的高转化率词群。" },
+                                { step: "第 2 步 • 技术诊断", title: "全站技术错误修复", desc: "Screaming Frog 深度爬取，修复 URL 重定向、规范标签及页面加载速度。" },
+                                { step: "第 3 步 • 站内优化", title: "文章扩写与落地页优化", desc: "重写点击率更高的 Title/Meta，补充个人贷款、信用卡详细指南。" },
+                                { step: "第 4 步 • 外链建设", title: "30 条主流媒体与实体外链", desc: "在知名财经新闻媒体、论坛布局外链，并完善社交实体同名验证。" }
+                            ]
+                        },
+                        {
+                            sub: "Slide 03 / 04 • 数据与成果",
+                            headline: "Google 搜索实测效果与数据证明",
+                            metrics: [
+                                { num: "550+", label: "核心目标词稳居前列排名", detail: "覆盖主流银行信用卡、储蓄及个人消费信贷词群" },
+                                { num: "30", label: "高质量媒体外链安全上线", detail: "来自正规权威新闻源及金融专业讨论区" },
+                                { num: "100%", label: "抓取与索引技术问题全面修复", detail: "符合 Google 对金融高风险领域 (YMYL) 的严格要求" }
+                            ],
+                            summary_title: "业务实际成效",
+                            summary_text: "有效稳固自然搜索基础流量，提升落地页信任度，为信用卡开卡与贷款申请提供持续稳定的有机转化。"
+                        },
+                        {
+                            sub: "Slide 04 / 04 • 工具与总结",
+                            headline: "所用工具与方法论",
+                            tools: ["SEMrush", "Screaming Frog", "Google Analytics 4 (GA4)", "Google Search Console", "Keyword Tool"],
+                            points: [
+                                "每周通过 Search Console 动态监测波动，第一时间响应算法调整。",
+                                "金融行业重在专业度与信任度，技术底层与优质内容必须同步协同。",
+                                "严格控制锚文本自然比例，杜绝垃圾链接以实现长期稳定。"
+                            ]
+                        }
+                    ]
+                }
+            },
+            cellphones: {
+                vi: {
+                    tag: "Thương mại điện tử - Công nghệ",
+                    title: "Case Study SEO: CellphoneS (Sforum) - 252 Từ khóa Top 3",
+                    slides: [
+                        {
+                            sub: "Slide 01 / 04 • Bối cảnh & Mục tiêu",
+                            headline: "Mở rộng độ phủ từ khóa iPhone & Android cho Sforum",
+                            cards: [
+                                { label: "Vai trò đảm nhận", val: "SEO Executive (Part-time)", desc: "Lập Outline E-E-A-T, tối ưu On-page và Content Refresh." },
+                                { label: "Kết quả từ khóa", val: "252 Từ khóa Top 3", desc: "Kéo các bài viết trang 2-3 lên Top 1-3 Google bền vững." },
+                                { label: "Hiệu suất quy trình AI", val: "-50% Thời gian", desc: "Dùng Claude/ChatGPT để rút ngắn nửa thời gian làm Outline." }
+                            ],
+                            p1_title: "Bài toán thực tế",
+                            p1_text: "Chuyên trang công nghệ Sforum có lượng bài viết rất lớn nhưng nhiều bài viết thủ thuật, so sánh dòng máy bị kẹt ở trang 2-3 do cạnh tranh gay gắt từ Thế Giới Di Động và FPT Shop.",
+                            p2_title: "Hướng giải quyết",
+                            p2_text: "Không viết dàn trải mà tập trung rà soát các URL có sẵn tiềm năng, bổ sung thông tin thực tế theo đúng Search Intent, tối ưu lại thẻ tiêu đề, mô tả và liên kết nội bộ về trang bán lẻ CellphoneS."
+                        },
+                        {
+                            sub: "Slide 02 / 04 • Quy trình 4 bước",
+                            headline: "Quy trình kéo 252 từ khóa lọt Top 3 Google",
+                            grid: [
+                                { step: "BƯỚC 1 • PHÂN CỤM INTENT", title: "Phân loại từ khóa iPhone & Android", desc: "Dùng SEMrush chia nhóm: thủ thuật cài đặt, so sánh tính năng và tư vấn chọn mua để tránh nuốt từ khóa (Cannibalization)." },
+                                { step: "BƯỚC 2 • OUTLINE BẰNG AI", title: "Dàn ý E-E-A-T chuẩn xác", desc: "Tạo Prompt phân tích top 5 đối thủ, xây dựng bảng so sánh thông số và giải đáp đúng khúc mắc người mua trong bài viết." },
+                                { step: "BƯỚC 3 • CONTENT REFRESH", title: "Nâng cấp bài viết trang 2-3", desc: "Cập nhật thông tin mới nhất cho các bài viết cũ, viết lại Title kích thích CTR, tối ưu thẻ Alt ảnh và từ khóa ngữ nghĩa LSI." },
+                                { step: "BƯỚC 4 • INTERNAL LINK", title: "Điều hướng mạng liên kết nội bộ", desc: "Gắn liên kết chéo hợp ngữ cảnh giữa các bài tin Sforum và trỏ link trực tiếp về trang mua hàng sản phẩm CellphoneS." }
+                            ]
+                        },
+                        {
+                            sub: "Slide 03 / 04 • Minh chứng Google SERP #1",
+                            headline: "Kiểm chứng thực tế: Nhóm từ khóa So sánh & Tư vấn chọn mua",
+                            serpList: [
+                                { query: "so sánh ios và android", rank: "TOP 1 - 3 GOOGLE", url: "cellphones.com.vn/sforum/so-sanh-ios-va-android", title: "So sánh iOS và Android: Sự khác biệt là gì và hệ điều hành nào phù hợp cho bạn?", desc: "Phân tích chi tiết sự khác biệt về hiệu năng, khả năng tùy biến, kho ứng dụng và độ ổn định để chọn mua máy phù hợp..." },
+                                { query: "lý do chọn mua iphone thay vì android", rank: "TOP 1 - 3 GOOGLE", url: "cellphones.com.vn/sforum/ly-do-nhieu-nguoi-chon-mua-iphone-thay-vi-android", title: "Lý do nhiều người chọn mua iPhone thay vì Android - CellphoneS", desc: "Tổng hợp lý do chọn iPhone: Hệ sinh thái Apple đồng bộ, iOS mượt mà, bảo mật cao và giữ giá tốt khi bán lại..." }
+                            ]
+                        },
+                        {
+                            sub: "Slide 04 / 04 • Minh chứng Google SERP #2",
+                            headline: "Kiểm chứng thực tế: Nhóm từ khóa Thủ thuật & Tính năng độc quyền",
+                            serpList: [
+                                { query: "cách biến android thành ios", rank: "TOP 1 - 3 GOOGLE", url: "cellphones.com.vn/sforum/cach-bien-android-thanh-ios", title: "6 cách biến Android thành iOS sử dụng giống như iPhone", desc: "Hướng dẫn cài giao diện iOS cho Android, sử dụng Control Center, khóa màn hình và bộ icon giống iPhone mượt mà..." },
+                                { query: "tính năng trên iphone vượt trội so với android", rank: "TOP 1 - 3 GOOGLE", url: "cellphones.com.vn/sforum/5-tinh-nang-iphone-hoan-toan-vuot-troi-android", title: "5 tính năng trên iPhone hoàn toàn vượt trội so với Android - CellphoneS", desc: "Tùy chỉnh màn hình khóa, Continuity Camera, chất lượng quay video ổn định và phụ kiện MagSafe tiện lợi..." }
+                            ]
+                        }
+                    ]
+                },
+                en: {
+                    tag: "E-commerce & Tech",
+                    title: "SEO Case Study: CellphoneS (Sforum) - 252 Keywords in Top 3",
+                    slides: [
+                        {
+                            sub: "Slide 01 / 04 • Context & Objectives",
+                            headline: "Scaling iPhone & Android Keyword Coverage on Sforum",
+                            cards: [
+                                { label: "Role", val: "SEO Executive (Part-time)", desc: "Led E-E-A-T outlining, On-page standardization, and Content Refresh." },
+                                { label: "Keyword Win", val: "252 Top 3 Keywords", desc: "Pushed low-ranking page 2-3 guides into Google's top 3 spots." },
+                                { label: "AI Efficiency", val: "-50% Research Time", desc: "Leveraged Claude/ChatGPT prompts to halve outline creation time." }
+                            ],
+                            p1_title: "Real-world Problem",
+                            p1_text: "Sforum published huge volumes of tech tutorials and comparison posts, but many languished on pages 2-3 due to fierce competition from retail giants like The Gioi Di Dong and FPT Shop.",
+                            p2_title: "Strategic Solution",
+                            p2_text: "Avoided uncoordinated publishing. Focused on auditing high-potential existing URLs, enriching them with fresh buyer intent data, optimizing title tags, and building contextual internal links to CellphoneS product pages."
+                        },
+                        {
+                            sub: "Slide 02 / 04 • 4-Step Methodology",
+                            headline: "The 4-Step Process That Brought 252 Keywords into Top 3",
+                            grid: [
+                                { step: "STEP 1 • INTENT CLUSTERING", title: "iPhone & Android Query Mapping", desc: "Grouped queries by user intent: troubleshooting, feature comparisons, and buying guides to prevent internal cannibalization." },
+                                { step: "STEP 2 • AI-ASSISTED OUTLINES", title: "Structured E-E-A-T Blueprints", desc: "Engineered prompts analyzing the top 5 ranking results to incorporate spec matrices and practical reader pain points." },
+                                { step: "STEP 3 • CONTENT REFRESH", title: "Upgrading Underperforming Posts", desc: "Injected updated specs, redesigned CTR-focused titles, optimized alt tags, and woven in LSI semantic keywords." },
+                                { step: "STEP 4 • INTERNAL LINKING", title: "Topic Clusters to Commercial URLs", desc: "Constructed contextual cross-links between informational Sforum tutorials and commercial CellphoneS product catalogs." }
+                            ]
+                        },
+                        {
+                            sub: "Slide 03 / 04 • Live SERP Proof #1",
+                            headline: "Live Google Search Verification: Comparisons & Buying Guides",
+                            serpList: [
+                                { query: "compare ios and android", rank: "TOP 1 - 3 GOOGLE", url: "cellphones.com.vn/sforum/so-sanh-ios-va-android", title: "iOS vs. Android Comparison: Key Differences & Which OS Fits You Best", desc: "In-depth breakdown of performance differences, customization, app ecosystem, and longevity to guide your next phone purchase..." },
+                                { query: "reasons to buy iphone over android", rank: "TOP 1 - 3 GOOGLE", url: "cellphones.com.vn/sforum/ly-do-nhieu-nguoi-chon-mua-iphone-thay-vi-android", title: "Key Reasons Buyers Choose iPhone over Android - CellphoneS", desc: "Seamless Apple ecosystem integration, consistent iOS software updates, enhanced privacy, and high resale value..." }
+                            ]
+                        },
+                        {
+                            sub: "Slide 04 / 04 • Live SERP Proof #2",
+                            headline: "Live Google Search Verification: OS Customization & Features",
+                            serpList: [
+                                { query: "make android look like ios", rank: "TOP 1 - 3 GOOGLE", url: "cellphones.com.vn/sforum/cach-bien-android-thanh-ios", title: "6 Simple Ways to Make Android Look & Feel Like an iPhone", desc: "Step-by-step guide to installing iOS launchers, Control Center replicas, lock screens, and smooth Apple icon packs on Android..." },
+                                { query: "iphone features superior to android", rank: "TOP 1 - 3 GOOGLE", url: "cellphones.com.vn/sforum/5-tinh-nang-iphone-hoan-toan-vuot-troi-android", title: "5 iPhone Features That Clearly Outperform Android - CellphoneS", desc: "Lock screen customization, Continuity Camera integration, stable 4K video recording, and MagSafe magnetic accessories..." }
+                            ]
+                        }
+                    ]
+                },
+                zh: {
+                    tag: "电子商务与科技零售",
+                    title: "SEO 项目案例：CellphoneS (Sforum) - 252 个词进 Google 前 3",
+                    slides: [
+                        {
+                            sub: "Slide 01 / 04 • 背景与目标",
+                            headline: "扩大 Sforum 科技专栏在 iPhone 与安卓领域的关键词覆盖",
+                            cards: [
+                                { label: "负责角色", val: "SEO 执行专员 (兼职)", desc: "负责 E-E-A-T 大纲搭建、站内优化及老旧文章翻新。" },
+                                { label: "排名战绩", val: "252 个词稳居前 3", desc: "成功将排在第 2-3 页的文章推入 Google 第 1-3 名。" },
+                                { label: "AI 提效成果", val: "节省 50% 时间", desc: "利用 Claude/ChatGPT 提示词将大纲搭建时间缩短一半。" }
+                            ],
+                            p1_title: "实际面临问题",
+                            p1_text: "Sforum 拥有海量技术教程和评测文章，但在两大零售巨头（Thế Giới Di Động 与 FPT Shop）的挤压下，多篇对比和设置教程停滞在第 2-3 页。",
+                            p2_title: "核心解决方案",
+                            p2_text: "不盲目铺量，而是精细盘点具备潜力的既有 URL，针对用户搜索意图补充实用信息，重构标题与 Meta，并构建指向 CellphoneS 手机购买页的内链网。"
+                        },
+                        {
+                            sub: "Slide 02 / 04 • 4 步执行法",
+                            headline: "拉动 252 个关键词进入 Google 前 3 名的执行步骤",
+                            grid: [
+                                { step: "第 1 步 • 意图聚类", title: "iPhone 与安卓词库细分", desc: "通过 SEMrush 将词汇分为：功能设置教程、机型对比、购买推荐，避免站内内容互吃 (Cannibalization)。" },
+                                { step: "第 2 步 • AI 辅助大纲", title: "规范 E-E-A-T 结构", desc: "设计提示词分析前 5 名竞品，加入规格对比表格并精准回答读者购买痛点。" },
+                                { step: "第 3 步 • 老文翻新", title: "深度升级第 2-3 页文章", desc: "补充最新机型参数，重写高点击率 Title，优化图片 Alt 标签与 LSI 语义关键词。" },
+                                { step: "第 4 步 • 内部链接", title: "资讯导流到电商落地页", desc: "在 Sforum 资讯文章之间做主题集群链接，并自然引导用户点击 CellphoneS 销售主页面。" }
+                            ]
+                        },
+                        {
+                            sub: "Slide 03 / 04 • Google 排名实证 #1",
+                            headline: "Google 搜索实证：系统对比与选购指南词群",
+                            serpList: [
+                                { query: "iOS 与 Android 对比", rank: "TOP 1 - 3 GOOGLE", url: "cellphones.com.vn/sforum/so-sanh-ios-va-android", title: "iOS 与 Android 全面对比：主要差异与哪款系统更适合你", desc: "深度剖析性能表现、个性化定制、应用生态与系统稳定性，助你做出明智选机决策..." },
+                                { query: "选择购买 iPhone 而非安卓的原因", rank: "TOP 1 - 3 GOOGLE", url: "cellphones.com.vn/sforum/ly-do-nhieu-nguoi-chon-mua-iphone-thay-vi-android", title: "为什么很多人选择 iPhone 而不是安卓 - CellphoneS", desc: "Apple 生态深度协同、iOS 流畅易用、隐私安全保障以及二手高保值率盘点..." }
+                            ]
+                        },
+                        {
+                            sub: "Slide 04 / 04 • Google 排名实证 #2",
+                            headline: "Google 搜索实证：系统玩法与特色功能词群",
+                            serpList: [
+                                { query: "安卓变苹果系统", rank: "TOP 1 - 3 GOOGLE", url: "cellphones.com.vn/sforum/cach-bien-android-thanh-ios", title: "6 种让安卓手机变身 iPhone 界面的实用方法", desc: "手把手教你安装 iOS 启动器、控制中心、仿苹果锁屏和高精仿图标包..." },
+                                { query: "iPhone 相比安卓的优势功能", rank: "TOP 1 - 3 GOOGLE", url: "cellphones.com.vn/sforum/5-tinh-nang-iphone-hoan-toan-vuot-troi-android", title: "iPhone 完胜安卓手机的 5 项核心功能 - CellphoneS", desc: "个性化锁屏组件、连续互通相机、稳定 4K 视频录制及 MagSafe 磁吸生态..." }
+                            ]
+                        }
+                    ]
+                }
+            },
+            merperle: {
+                vi: {
+                    tag: "Du lịch - Khách sạn",
+                    title: "Case Study SEO: MerPerle NuiSam Resort",
+                    slides: [
+                        {
+                            sub: "Slide 01 / 04 • Bối cảnh & Mục tiêu",
+                            headline: "Chiến dịch tăng trưởng Organic Traffic & SEO Local",
+                            cards: [
+                                { label: "Vai trò đảm nhận", val: "SEO Executive", desc: "Audit kỹ thuật, thiết lập Schema và triển khai Local Map." },
+                                { label: "Mục tiêu từ khóa", val: "75 Từ khóa Top 10", desc: "Đưa từ khóa dịch vụ lưu trú du lịch Núi Sam vào trang nhất." },
+                                { label: "SEO Local Maps", val: "Tăng hiển thị Map", desc: "Tối ưu hồ sơ Google My Business thu hút khách đặt phòng." }
+                            ],
+                            p1_title: "Bài toán thực tế",
+                            p1_text: "Website mới triển khai, tốc độ tải trang chậm do ảnh nặng, điểm uy tín tên miền (Domain Authority) thấp nên khó cạnh tranh với các trang OTA (Agoda, Booking).",
+                            p2_title: "Giải pháp thực hiện",
+                            p2_text: "Tối ưu tốc độ tải trang, nén ảnh toàn bộ, cài Schema Khách sạn / Đánh giá, tổ chức bài viết theo Topic Cluster du lịch An Giang và xây dựng backlink ngành du lịch."
+                        },
+                        {
+                            sub: "Slide 02 / 04 • Quy trình thực hiện",
+                            headline: "Tối ưu hóa Technical & Nội dung nghỉ dưỡng",
+                            grid: [
+                                { step: "BƯỚC 1 • SPEED & SCHEMA", title: "Nén tài nguyên & Cài Schema", desc: "Sử dụng Screaming Frog phát hiện lỗi, nén WebP, cài Schema Hotel, LocalBusiness để tăng độ tin cậy với Google." },
+                                { step: "BƯỚC 2 • TOPIC CLUSTER", title: "Cụm chủ đề du lịch Núi Sam", desc: "Xây dựng các bài viết cẩm nang du lịch Châu Đốc - Núi Sam, gắn liên kết nội bộ điều hướng về trang đặt phòng." },
+                                { step: "BƯỚC 3 • LINK & DISAVOW", title: "Lọc link xấu & Build link du lịch", desc: "Chặn các domain rác tự động trỏ về, triển khai bài PR trên các chuyên trang review du lịch, ẩm thực miền Tây." },
+                                { step: "BƯỚC 4 • GOOGLE MAPS", title: "Chuẩn hóa Google My Business", desc: "Cập nhật NAP đồng nhất, đăng tải hình ảnh resort thực tế và tối ưu từ khóa địa phương để đón khách tìm kiếm quanh vùng." }
+                            ]
+                        },
+                        {
+                            sub: "Slide 03 / 04 • Dữ liệu & Kết quả",
+                            headline: "Kết quả tăng trưởng thứ hạng và độ phủ",
+                            metrics: [
+                                { num: "75+", label: "Từ khóa dịch vụ nghỉ dưỡng lọt Top 10", detail: "Bao gồm các từ khóa tìm phòng và cẩm nang du lịch Núi Sam" },
+                                { num: "Top 3", label: "Hiển thị Google Maps địa phương", detail: "Khi du khách tìm kiếm resort / khách sạn tại Châu Đốc" },
+                                { num: "< 2.5s", label: "Tốc độ tải trang đạt chuẩn Core Web Vitals", detail: "Giảm 60% dung lượng hình ảnh trên toàn bộ trang đích" }
+                            ],
+                            summary_title: "Tác động đến thương hiệu",
+                            summary_text: "Thương hiệu MerPerle NuiSam Resort phủ sóng rộng khắp tìm kiếm tự nhiên, giúp du khách dễ dàng liên hệ đặt phòng trực tiếp thay vì phụ thuộc hoàn toàn vào kênh OTA."
+                        },
+                        {
+                            sub: "Slide 04 / 04 • Đúc kết & Công cụ",
+                            headline: "Công cụ & Bài học triển khai ngành Hospitality",
+                            tools: ["SEMrush", "Screaming Frog", "Yoast SEO", "Google My Business", "Schema Markup Validator"],
+                            points: [
+                                "Nội dung du lịch cần hình ảnh đẹp nhưng bắt buộc phải nén chuẩn WebP để không làm chậm trang.",
+                                "Kết hợp nhuần nhuyễn giữa SEO Website và Google Maps là chìa khóa thành công cho ngành khách sạn.",
+                                "Schema Markup giúp Google hiểu chính xác địa chỉ, xếp hạng sao và dịch vụ của resort."
+                            ]
+                        }
+                    ]
+                },
+                en: {
+                    tag: "Travel & Hospitality",
+                    title: "SEO Case Study: MerPerle NuiSam Resort",
+                    slides: [
+                        {
+                            sub: "Slide 01 / 04 • Context & Objectives",
+                            headline: "Scaling Organic Traffic & Local SEO for Resort Bookings",
+                            cards: [
+                                { label: "Role", val: "SEO Executive", desc: "Handled Technical Audit, Schema implementation, and Local GMB." },
+                                { label: "Keyword Target", val: "75 Keywords in Top 10", desc: "Rank core Nui Sam accommodation queries on Google Page 1." },
+                                { label: "Local Visibility", val: "Google Maps Boost", desc: "Optimized GMB profile to drive direct phone & booking leads." }
+                            ],
+                            p1_title: "Real-world Problem",
+                            p1_text: "The website was newly built with slow page speeds caused by heavy uncompressed images, and weak domain authority made it hard to compete with OTAs (Agoda, Booking.com).",
+                            p2_title: "Strategic Solution",
+                            p2_text: "Optimized Core Web Vitals via image compression, implemented Hotel and Review Schema, structured travel guide Topic Clusters for An Giang, and acquired targeted travel links."
+                        },
+                        {
+                            sub: "Slide 02 / 04 • Execution Workflow",
+                            headline: "Technical Optimization & Hospitality Content Architecture",
+                            grid: [
+                                { step: "STEP 1 • SPEED & SCHEMA", title: "Asset Compression & Schema", desc: "Detected heavy media via Screaming Frog, converted to WebP, and implemented Hotel & LocalBusiness Schema." },
+                                { step: "STEP 2 • TOPIC CLUSTERS", title: "Travel Guide Content Hubs", desc: "Created travel hubs around Chau Doc & Nui Sam attractions, internally linking back to reservation pages." },
+                                { step: "STEP 3 • CLEAN LINK PROFILE", title: "Disavow Spam & Build Travel Links", desc: "Disavowed toxic scrapers while building guest features on trusted Vietnamese travel blogs and forums." },
+                                { step: "STEP 4 • GOOGLE MAPS", title: "Google My Business Optimization", desc: "Standardized NAP consistency, uploaded geotagged resort media, and optimized localized keywords." }
+                            ]
+                        },
+                        {
+                            sub: "Slide 03 / 04 • Quantitative Results",
+                            headline: "Ranking & Footprint Achievements",
+                            metrics: [
+                                { num: "75+", label: "Hospitality Keywords Ranked in Top 10", detail: "Covering direct booking intent and local travel guide queries" },
+                                { num: "Top 3", label: "Google Maps Local Pack Visibility", detail: "For searches related to hotels and resorts in Chau Doc" },
+                                { num: "< 2.5s", label: "Page Load Speed Achieved", detail: "Over 60% reduction in total page weight across key pages" }
+                            ],
+                            summary_title: "Commercial Impact",
+                            summary_text: "MerPerle NuiSam Resort established a dominant organic search presence, driving direct traveler inquiries and lessening dependence on high-commission OTA platforms."
+                        },
+                        {
+                            sub: "Slide 04 / 04 • Tools & Key Takeaways",
+                            headline: "Key Takeaways for Hospitality SEO",
+                            tools: ["SEMrush", "Screaming Frog", "Yoast SEO", "Google My Business", "Schema Markup Validator"],
+                            points: [
+                                "Hospitality assets need stunning photography, but aggressive WebP compression is vital for mobile speed.",
+                                "Synchronizing website On-page with Google My Business is essential for local foot traffic.",
+                                "Structured data (Schema) gives Google direct context on room pricing, ratings, and amenities."
+                            ]
+                        }
+                    ]
+                },
+                zh: {
+                    tag: "旅游与度假酒店",
+                    title: "SEO 项目案例：MerPerle 纽森度假村 (MerPerle NuiSam Resort)",
+                    slides: [
+                        {
+                            sub: "Slide 01 / 04 • 项目背景与目标",
+                            headline: "自然搜索流量增长与本地地图 SEO 方案",
+                            cards: [
+                                { label: "负责角色", val: "SEO 执行专员", desc: "负责全站技术诊断、Schema 配置及 Google 商家地图优化。" },
+                                { label: "排名目标", val: "75 个核心词进前 10", desc: "将纽森地区度假与酒店搜索词推入 Google 首页。" },
+                                { label: "本地地图", val: "Google 地图曝光跃升", desc: "优化 GMB 商家资料以促成更多直接预订咨询。" }
+                            ],
+                            p1_title: "实际面临问题",
+                            p1_text: "网站为新建站点，未压缩的高清图片导致加载缓慢，初始域名权重低，难以与 Agoda、Booking 等大型 OTA 平台竞争。"
+                            p2_title: "核心解决方案",
+                            p2_text: "全站图片压缩提速，配置 Hotel 与评价结构化数据，搭建安江省纽森旅游指南主题集群，并引入旅游垂直外链。"
+                        },
+                        {
+                            sub: "Slide 02 / 04 • 执行流程",
+                            headline: "技术调优与度假村内容架构搭建",
+                            grid: [
+                                { step: "第 1 步 • 测速与结构化", title: "资源压缩与 Schema 配置", desc: "通过 Screaming Frog 排查，图片全量转 WebP，并配置 Hotel 与 LocalBusiness 结构化数据。" },
+                                { step: "第 2 步 • 主题集群", title: "纽森旅游出行攻略库", desc: "撰写朱笃-纽森周边旅游攻略指南，通过上下文内链引导访客前往客房预订页。" },
+                                { step: "第 3 步 • 外链净化", title: "清理垃圾链接并建行业外链", desc: "拒绝（Disavow）低质蜘蛛抓取链，并在越南优质旅游博客及游记平台发布推荐。" },
+                                { step: "第 4 步 • 本地地图", title: "Google My Business 深度优化", desc: "保持 NAP 信息严格一致，上传实景照片，并优化当地地标检索排名。" }
+                            ]
+                        },
+                        {
+                            sub: "Slide 03 / 04 • 数据与成果",
+                            headline: "排名增长与品牌覆盖数据实录",
+                            metrics: [
+                                { num: "75+", label: "度假住宿类核心词挺进前 10", detail: "包含客房预订意图词与周边游攻略热搜词" },
+                                { num: "Top 3", label: "Google 本地地图稳居前三名", detail: "游客在周边搜索度假村/酒店时优先展示" },
+                                { num: "< 2.5s", label: "页面加载耗时达标 Core Web Vitals", detail: "核心页面资源体积整体压缩达 60% 以上" }
+                            ],
+                            summary_title: "品牌实际成效",
+                            summary_text: "MerPerle 纽森度假村在 Google 自然搜索与地图端建立起品牌口碑，显著提升直客电话与预订转化，减轻对 OTA 佣金的依赖。"
+                        },
+                        {
+                            sub: "Slide 04 / 04 • 工具与总结",
+                            headline: "酒店文旅行业 SEO 心得",
+                            tools: ["SEMrush", "Screaming Frog", "Yoast SEO", "Google My Business", "Schema Markup Validator"],
+                            points: [
+                                "文旅类网站必须兼顾视觉美感与加载速度，WebP 格式压缩不可或缺。",
+                                "官网 SEO 与 Google Maps 本地商家资料深度联动，是获客转化的胜负手。",
+                                "Schema 结构化数据让搜索引擎能精准抓取度假村的房型价格与评价。"
+                            ]
+                        }
+                    ]
+                }
+            },
+            hoangkim: {
+                vi: {
+                    tag: "Phụ kiện & Dịch vụ Ô tô",
+                    title: "Case Study SEO: Ô Tô Hoàng Kim - Phục hồi 150% Traffic",
+                    slides: [
+                        {
+                            sub: "Slide 01 / 04 • Bối cảnh & Mục tiêu",
+                            headline: "Phục hồi 150% Traffic & Đưa từ khóa vào Top 3",
+                            cards: [
+                                { label: "Vai trò đảm nhận", val: "SEO Fresher", desc: "Khắc phục 95% lỗi kỹ thuật, triển khai Schema và Social Stack." },
+                                { label: "Mục tiêu thứ hạng", val: "Top 3 – Top 5 Google", desc: "Xếp hạng nhóm từ khóa dịch vụ & đồ chơi xe hơi chính." },
+                                { label: "Tăng trưởng Traffic", val: "+150% Lưu lượng", desc: "Phục hồi mạnh mẽ lưu lượng truy cập tự nhiên sau tối ưu." }
+                            ],
+                            p1_title: "Bài toán thực tế",
+                            p1_text: "Website chưa từng triển khai SEO bài bản, danh mục sản phẩm lộn xộn, thiếu Schema dữ liệu có cấu trúc và ngành phụ kiện ô tô có độ cạnh tranh cực kỳ gay gắt.",
+                            p2_title: "Giải pháp thực hiện",
+                            p2_text: "Đánh từ khóa đuôi dài (long-tail) để lấy traffic sớm, cài đặt toàn diện Schema Product & Service, đề xuất sửa giao diện giúp giảm tỷ lệ thoát từ 55% xuống 32% và xây hệ thống theo dõi tự động trên Google Sheets."
+                        },
+                        {
+                            sub: "Slide 02 / 04 • Quy trình thực hiện",
+                            headline: "Quy trình xây dựng nền tảng SEO toàn diện",
+                            grid: [
+                                { step: "BƯỚC 1 • LONG-TAIL KEYWORDS", title: "Chiến lược từ khóa đuôi dài", desc: "Xác định từ khóa cạnh tranh thấp đến trung bình qua SEMrush để đem lại traffic nhanh chóng cho các dòng xe phổ biến." },
+                                { step: "BƯỚC 2 • TECHNICAL & SCHEMA", title: "Sửa 95% lỗi & Cài Schema", desc: "Thiết lập Schema Markup cho sản phẩm, dịch vụ và đánh giá; chuẩn hóa lại Robots.txt, Sitemap và cấu trúc thẻ H1-H3." },
+                                { step: "BƯỚC 3 • TỐI ƯU UX/UI", title: "Giảm Bounce Rate xuống 32%", desc: "Đề xuất bố cục lại trang thông tin sản phẩm dễ nhìn, giá cả minh bạch và nút liên hệ nổi bật để giữ chân người xem." },
+                                { step: "BƯỚC 4 • AUTOMATION REPORT", title: "Theo dõi tự động trên Sheets", desc: "Kết nối trực tiếp Search Console với Google Sheets để tự động cập nhật biến động thứ hạng từ khóa hàng ngày." }
+                            ]
+                        },
+                        {
+                            sub: "Slide 03 / 04 • Dữ liệu & Kết quả",
+                            headline: "Kết quả tăng trưởng ấn tượng đo lường bằng số liệu",
+                            metrics: [
+                                { num: "+150%", label: "Lưu lượng truy cập tự nhiên (Organic Traffic)", detail: "Phục hồi và vượt mức đỉnh trước khi triển khai SEO" },
+                                { num: "Top 3", label: "Thứ hạng các nhóm từ khóa phụ kiện chủ lực", detail: "Vượt qua nhiều website đối thủ lâu năm trên SERP" },
+                                { num: "32%", label: "Tỷ lệ thoát trang (Bounce Rate)", detail: "Cải thiện rõ rệt so với mức 55% ban đầu" }
+                            ],
+                            summary_title: "Giá trị mang lại cho doanh nghiệp",
+                            summary_text: "Ô Tô Hoàng Kim xây dựng được nền tảng SEO vững chắc, khách hàng tìm kiếm phụ kiện theo từng dòng xe gọi điện thoại và nhắn tin Zalo mua hàng tăng đều đặn."
+                        },
+                        {
+                            sub: "Slide 04 / 04 • Đúc kết & Công cụ",
+                            headline: "Công cụ & Bài học đúc rút",
+                            tools: ["SEMrush", "Screaming Frog", "Schema Markup", "Google Sheets API", "Search Console"],
+                            points: [
+                                "Đánh từ khóa đuôi dài có nhu cầu mua thực tế luôn là nước đi thông minh cho website mới làm SEO.",
+                                "Trải nghiệm trang đích (UX/UI) tác động trực tiếp đến tỷ lệ thoát và điểm xếp hạng của Google.",
+                                "Tự động hóa báo cáo trên Google Sheets giúp tiết kiệm nhiều giờ tổng hợp dữ liệu thủ công mỗi tuần."
+                            ]
+                        }
+                    ]
+                },
+                en: {
+                    tag: "Automotive Accessories & Services",
+                    title: "SEO Case Study: Hoang Kim Auto - 150% Traffic Recovery",
+                    slides: [
+                        {
+                            sub: "Slide 01 / 04 • Context & Objectives",
+                            headline: "150% Organic Traffic Rebound & Top 3 Rankings",
+                            cards: [
+                                { label: "Role", val: "SEO Fresher", desc: "Resolved 95% technical bugs, added Schema, and built social stacks." },
+                                { label: "Ranking Goal", val: "Top 3 – Top 5 Google", desc: "Rank core commercial car accessory and installation terms." },
+                                { label: "Traffic Win", val: "+150% Organic Traffic", desc: "Dramatic traffic turnaround via technical fixes & intent-led content." }
+                            ],
+                            p1_title: "Real-world Problem",
+                            p1_text: "The website had never undergone systematic SEO. Product categories were messy, structured data was missing, and automotive accessory search was brutally competitive.",
+                            p2_title: "Strategic Solution",
+                            p2_text: "Targeted low-competition long-tail keywords for fast traffic gains, implemented Product & Service Schema, refined product page UX to cut bounce rate from 55% to 32%, and created an automated rank tracking sheet."
+                        },
+                        {
+                            sub: "Slide 02 / 04 • Execution Workflow",
+                            headline: "Building a Solid Commercial SEO Foundation",
+                            grid: [
+                                { step: "STEP 1 • LONG-TAIL KEYWORDS", title: "Targeting Buyer Queries", desc: "Used SEMrush to pinpoint low-to-medium difficulty keywords specific to popular car models for immediate organic traffic." },
+                                { step: "STEP 2 • TECHNICAL & SCHEMA", title: "Resolved 95% of Site Bugs", desc: "Added Product, Service, and Review Schema; restructured Robots.txt, XML Sitemap, and H1-H3 heading hierarchies." },
+                                { step: "STEP 3 • UX/UI REFINEMENT", title: "Bounce Rate Reduced to 32%", desc: "Proposed cleaner product page layouts, transparent pricing tables, and clear call-to-actions to keep visitors on site." },
+                                { step: "STEP 4 • AUTOMATION REPORT", title: "Automated Google Sheets Tracker", desc: "Connected Google Search Console directly to Google Sheets to automatically update daily keyword positions." }
+                            ]
+                        },
+                        {
+                            sub: "Slide 03 / 04 • Quantitative Results",
+                            headline: "Measurable Growth Across Key Performance Metrics",
+                            metrics: [
+                                { num: "+150%", label: "Organic Traffic Growth", detail: "Full traffic recovery surpassing the previous historical peak" },
+                                { num: "Top 3", label: "Rankings on High-Intent Accessory Terms", detail: "Outperformed established competitors on key commercial terms" },
+                                { num: "32%", label: "Bounce Rate Achieved", detail: "Down substantially from the initial 55% baseline" }
+                            ],
+                            summary_title: "Tangible Commercial Value",
+                            summary_text: "Hoang Kim Auto secured a reliable organic customer acquisition channel, generating a steady volume of phone calls and service booking inquiries for car installations."
+                        },
+                        {
+                            sub: "Slide 04 / 04 • Tools & Key Takeaways",
+                            headline: "Tooling & Practical Takeaways",
+                            tools: ["SEMrush", "Screaming Frog", "Schema Markup", "Google Sheets API", "Search Console"],
+                            points: [
+                                "Attacking high-intent long-tail keywords is the smartest early play for newly optimized commercial sites.",
+                                "Landing page UX directly influences dwell time and Google ranking sustainability.",
+                                "Automating Search Console reports into Google Sheets saves hours of manual reporting every week."
+                            ]
+                        }
+                    ]
+                },
+                zh: {
+                    tag: "汽车配件与服务",
+                    title: "SEO 项目案例：黄金汽车配件 (Ô Tô Hoàng Kim) - 流量恢复 150% 与进前 3 名",
+                    slides: [
+                        {
+                            sub: "Slide 01 / 04 • 背景与目标",
+                            headline: "自然流量恢复 150% 并将核心词推入前 3 名",
+                            cards: [
+                                { label: "负责角色", val: "SEO 初级专员 (Fresher)", desc: "解决 95% 技术错误，配置 Schema 结构化数据并搭建社交矩阵。" },
+                                { label: "排名目标", val: "Google 前 3 – 前 5 名", desc: "推动核心汽车配件及改装服务词进入搜索前列。" },
+                                { label: "流量战绩", val: "自然流量增加 150%", desc: "通过长尾词布局与技术修正实现自然流量的大幅逆转。" }
+                            ],
+                            p1_title: "实际面临问题",
+                            p1_text: "网站此前未进行过规范的 SEO 工作，产品分类缺乏逻辑，未配置结构化数据，且汽车用品与改装行业竞争激烈。",
+                            p2_title: "核心解决方案",
+                            p2_text: "主攻低竞争度的长尾词快速引流，全面部署 Product 与 Service Schema，优化落地页体验使跳出率从 55% 降至 32%，并制作 Search Console 自动化报表。"
+                        },
+                        {
+                            sub: "Slide 02 / 04 • 执行流程",
+                            headline: "从零搭建商业网站 SEO 底层逻辑",
+                            grid: [
+                                { step: "第 1 步 • 长尾词突破", title: "锁定高意图细分车型词", desc: "利用 SEMrush 挖掘主流热门车型的低中竞争度词群，快速为新页面带来真实意向访客。" },
+                                { step: "第 2 步 • 技术与结构化", title: "排除 95% 错误并上 Schema", desc: "部署产品、服务及评价 Schema；规范 Robots.txt、Sitemap 以及全站 H1-H3 标题标签。" },
+                                { step: "第 3 步 • 页面体验优化", title: "跳出率成功压降至 32%", desc: "重构产品展示信息，突出价格透明度与快捷咨询按钮，显著增加用户在站内的停留时长。" },
+                                { step: "第 4 步 • 自动化报表", title: "Google Sheets 自动追踪", desc: "通过 API 将 Search Console 数据与 Google 表格对接，实现核心词排名的每日自动同步更新。" }
+                            ]
+                        },
+                        {
+                            sub: "Slide 03 / 04 • 数据与成果",
+                            headline: "关键指标实测增长成效",
+                            metrics: [
+                                { num: "+150%", label: "自然搜索流量增长率", detail: "全面恢复并大幅超越历史最高流量水平" },
+                                { num: "Top 3", label: "核心汽车改装词位列前三", detail: "在多项核心产品词上超越多年资深同行竞品" },
+                                { num: "32%", label: "全站平均跳出率 (Bounce Rate)", detail: "相比原先 55% 的高跳出率取得显著改善" }
+                            ],
+                            summary_title: "为企业创造的实际价值",
+                            summary_text: "黄金汽车成功建立起高性价比的自然搜索获客渠道，因特定车型配件搜索而来的咨询电话与到店安装订单持续稳定增加。"
+                        },
+                        {
+                            sub: "Slide 04 / 04 • 工具与总结",
+                            headline: "工具矩阵与经验结晶",
+                            tools: ["SEMrush", "Screaming Frog", "Schema Markup", "Google Sheets API", "Search Console"],
+                            points: [
+                                "对于初期网站，切入长尾购买意图词是快速验证 SEO 价值的最佳策略。",
+                                "落地页的浏览体验直接影响停留时间和 Google 的最终排名评分。",
+                                "通过自动化表格对接 GSC 数据，每周能节省数小时的手工汇报时间。"
+                            ]
+                        }
+                    ]
+                }
+            }
+        };
+
+        // Switch site language
         function setLanguage(lang) {
             currentLang = lang;
-            document.documentElement.lang = lang;
+            document.documentElement.lang = (lang === 'zh') ? 'zh-Hans' : lang;
 
             ['vi', 'en', 'zh'].forEach(l => {
                 const btn = document.getElementById('btn-' + l);
@@ -1294,6 +1651,7 @@
                 }
             });
 
+            // Update all text nodes with data-i18n
             const dict = translations[lang];
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
@@ -1301,7 +1659,269 @@
                     el.textContent = dict[key];
                 }
             });
+
+            // Update modal tab button texts
+            const tabDeckBtn = document.getElementById('tab-btn-deck');
+            const tabEmbedBtn = document.getElementById('tab-btn-embed');
+            if (tabDeckBtn && dict.modal_tab_deck) tabDeckBtn.textContent = dict.modal_tab_deck;
+            if (tabEmbedBtn && dict.modal_tab_embed) tabEmbedBtn.textContent = dict.modal_tab_embed;
+            
+            const prevLabel = document.getElementById('label-prev-slide');
+            const nextLabel = document.getElementById('label-next-slide');
+            if (prevLabel && dict.slide_btn_prev) prevLabel.textContent = dict.slide_btn_prev;
+            if (nextLabel && dict.slide_btn_next) nextLabel.textContent = dict.slide_btn_next;
+
+            // If modal is currently open, re-render slide deck
+            if (!document.getElementById('project-modal').classList.contains('hidden')) {
+                renderModalContent();
+            }
         }
+
+        // Open unified project modal
+        function openProjectModal(key) {
+            activeProjectKey = key;
+            currentSlideIndex = 0;
+            currentModalView = 'deck';
+
+            const modal = document.getElementById('project-modal');
+            const tabGroup = document.getElementById('modal-tab-group');
+            const embedIframe = document.getElementById('modal-embed-iframe');
+
+            // Check if project has Google Slide embed
+            if (embedUrls[key]) {
+                tabGroup.classList.remove('hidden');
+                embedIframe.src = embedUrls[key];
+            } else {
+                tabGroup.classList.add('hidden');
+                embedIframe.src = '';
+            }
+
+            switchModalView('deck');
+            renderModalContent();
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('project-modal');
+            modal.classList.add('hidden');
+            document.getElementById('modal-embed-iframe').src = '';
+            document.body.style.overflow = '';
+        }
+
+        // Switch between Interactive Slide Deck and Google Slide Embed
+        function switchModalView(view) {
+            currentModalView = view;
+            const deckView = document.getElementById('modal-view-deck');
+            const embedView = document.getElementById('modal-view-embed');
+            const deckTab = document.getElementById('tab-btn-deck');
+            const embedTab = document.getElementById('tab-btn-embed');
+
+            if (view === 'deck') {
+                deckView.classList.remove('hidden');
+                embedView.classList.add('hidden');
+                deckTab.classList.add('active');
+                deckTab.classList.remove('text-zinc-600');
+                embedTab.classList.remove('active');
+                embedTab.classList.add('text-zinc-600');
+            } else {
+                deckView.classList.add('hidden');
+                embedView.classList.remove('hidden');
+                embedTab.classList.add('active');
+                embedTab.classList.remove('text-zinc-600');
+                deckTab.classList.remove('active');
+                deckTab.classList.add('text-zinc-600');
+            }
+        }
+
+        // Render dynamic interactive slide content
+        function renderModalContent() {
+            const projectData = projectDecks[activeProjectKey][currentLang];
+            if (!projectData) return;
+
+            document.getElementById('modal-project-badge').textContent = projectData.tag;
+            document.getElementById('modal-project-title').textContent = projectData.title;
+
+            const totalSlides = projectData.slides.length;
+            currentSlideIndex = Math.max(0, Math.min(totalSlides - 1, currentSlideIndex));
+
+            const slide = projectData.slides[currentSlideIndex];
+            const container = document.getElementById('active-slide-container');
+
+            // Build HTML for the active slide
+            let html = `
+                <div class="space-y-5">
+                    <div class="flex items-center justify-between border-b border-zinc-100 pb-3">
+                        <div>
+                            <span class="text-xs font-semibold text-blue-700 uppercase tracking-wider">${slide.sub}</span>
+                            <h4 class="text-xl sm:text-2xl font-bold text-zinc-900 mt-0.5">${slide.headline}</h4>
+                        </div>
+                    </div>
+            `;
+
+            // Case A: Slide 1 (Overview cards & paragraphs)
+            if (slide.cards) {
+                html += `
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        ${slide.cards.map(c => `
+                            <div class="p-3.5 rounded-xl bg-zinc-50 border border-zinc-200">
+                                <div class="text-xs text-zinc-500">${c.label}</div>
+                                <div class="text-base sm:text-lg font-bold text-zinc-900 mt-0.5">${c.val}</div>
+                                <div class="text-xs text-zinc-600 mt-1">${c.desc}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 text-xs sm:text-sm">
+                        <div class="p-4 rounded-xl border border-zinc-200 bg-zinc-50/50">
+                            <div class="font-bold text-zinc-900 mb-1">${slide.p1_title}</div>
+                            <p class="text-zinc-600 leading-relaxed">${slide.p1_text}</p>
+                        </div>
+                        <div class="p-4 rounded-xl border border-zinc-200 bg-zinc-50/50">
+                            <div class="font-bold text-zinc-900 mb-1">${slide.p2_title}</div>
+                            <p class="text-zinc-600 leading-relaxed">${slide.p2_text}</p>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Case B: Slide 2 (Process grid)
+            if (slide.grid) {
+                html += `
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs sm:text-sm">
+                        ${slide.grid.map(g => `
+                            <div class="p-4 rounded-xl border border-zinc-200 bg-zinc-50/60 space-y-1">
+                                <div class="text-[11px] font-bold text-blue-700">${g.step}</div>
+                                <div class="font-bold text-zinc-900">${g.title}</div>
+                                <p class="text-zinc-600 text-xs leading-relaxed">${g.desc}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            }
+
+            // Case C: Slide with metrics (VIB / MerPerle / Hoang Kim results)
+            if (slide.metrics) {
+                html += `
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        ${slide.metrics.map(m => `
+                            <div class="p-4 rounded-xl bg-blue-50/50 border border-blue-200/80">
+                                <div class="text-2xl font-bold text-blue-800">${m.num}</div>
+                                <div class="text-xs font-semibold text-zinc-900 mt-1">${m.label}</div>
+                                <div class="text-[11px] text-zinc-500 mt-0.5">${m.detail}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="p-4 rounded-xl border border-zinc-200 bg-zinc-50 text-xs sm:text-sm mt-3">
+                        <div class="font-bold text-zinc-900 mb-1">${slide.summary_title}</div>
+                        <p class="text-zinc-600 leading-relaxed">${slide.summary_text}</p>
+                    </div>
+                `;
+            }
+
+            // Case D: SERP verification items (CellphoneS)
+            if (slide.serpList) {
+                html += `
+                    <div class="space-y-3">
+                        ${slide.serpList.map(serp => `
+                            <div class="p-3.5 rounded-xl border border-zinc-200 bg-zinc-50/60 space-y-2">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-5 h-5 rounded-full bg-red-600 text-white font-bold flex items-center justify-center text-[10px]">S</span>
+                                        <div>
+                                            <div class="text-xs font-medium text-zinc-900">CellphoneS Sforum</div>
+                                            <div class="text-[11px] text-zinc-500 truncate max-w-[280px] sm:max-w-md">${serp.url}</div>
+                                        </div>
+                                    </div>
+                                    <span class="px-2 py-0.5 text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 rounded">${serp.rank}</span>
+                                </div>
+                                <div class="text-sm font-semibold text-blue-700">${serp.title}</div>
+                                <p class="text-xs text-zinc-600 leading-relaxed">${serp.desc}</p>
+                                <div class="pt-1 flex justify-end">
+                                    <a href="https://www.google.com/search?q=${encodeURIComponent(serp.query + ' cellphones')}" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-blue-600 hover:underline">
+                                        ${currentLang === 'vi' ? 'Kiểm tra trên Google' : (currentLang === 'en' ? 'Verify on Google Search' : '在 Google 上验证')} ↗
+                                    </a>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            }
+
+            // Case E: Takeaways & tools (Slide 4)
+            if (slide.tools && slide.points) {
+                html += `
+                    <div class="space-y-4">
+                        <div class="flex flex-wrap gap-2">
+                            ${slide.tools.map(t => `<span class="px-3 py-1 rounded-lg bg-zinc-100 border border-zinc-200 text-xs font-medium text-zinc-700">${t}</span>`).join('')}
+                        </div>
+                        <div class="p-4 rounded-xl border border-zinc-200 bg-zinc-50/50 space-y-2 text-xs sm:text-sm">
+                            <div class="font-bold text-zinc-900 mb-2">${currentLang === 'vi' ? 'Kinh nghiệm thực chiến đúc kết:' : (currentLang === 'en' ? 'Core Execution Takeaways:' : '核心实战经验总结：')}</div>
+                            <ul class="space-y-2 text-zinc-600 list-disc pl-4">
+                                ${slide.points.map(pt => `<li>${pt}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            }
+
+            html += `</div>`;
+            container.innerHTML = html;
+
+            // Render Dots
+            const dotsContainer = document.getElementById('slide-dots-container');
+            let dotsHtml = '';
+            for (let i = 0; i < totalSlides; i++) {
+                dotsHtml += (i === currentSlideIndex)
+                    ? `<button onclick="goToModalSlide(${i})" class="w-6 h-2 rounded-full bg-zinc-900 transition"></button>`
+                    : `<button onclick="goToModalSlide(${i})" class="w-2 h-2 rounded-full bg-zinc-300 hover:bg-zinc-400 transition"></button>`;
+            }
+            dotsContainer.innerHTML = dotsHtml;
+
+            // Update Prev / Next buttons state
+            document.getElementById('slide-prev-btn').disabled = (currentSlideIndex === 0);
+            document.getElementById('slide-next-btn').disabled = (currentSlideIndex === totalSlides - 1);
+        }
+
+        function goToModalSlide(index) {
+            currentSlideIndex = index;
+            renderModalContent();
+        }
+
+        function changeModalSlide(delta) {
+            currentSlideIndex += delta;
+            renderModalContent();
+        }
+
+        // Close modal on outer overlay click
+        document.getElementById('project-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'project-modal') closeProjectModal();
+        });
+
+        // Copy contact data with feedback
+        function copyValue(text) {
+            const input = document.createElement('textarea');
+            input.value = text;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+
+            const toast = document.getElementById('toast');
+            toast.textContent = currentLang === 'vi' ? 'Đã sao chép: ' + text : (currentLang === 'en' ? 'Copied: ' + text : '已复制到剪贴板: ' + text);
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 2200);
+        }
+
+        // Export directly to PDF via print styles
+        function exportToPDF() {
+            window.print();
+        }
+
+        // Initialize language
+        window.addEventListener('DOMContentLoaded', () => {
+            setLanguage('vi');
+        });
     </script>
 </body>
 </html>
