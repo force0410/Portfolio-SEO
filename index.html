@@ -26,6 +26,9 @@
             font-weight: 600;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
+        .print-only {
+            display: none;
+        }
         @media print {
             @page {
                 size: A4;
@@ -39,6 +42,9 @@
             }
             header, .no-print, #project-modal, #toast {
                 display: none !important;
+            }
+            .print-only {
+                display: block !important;
             }
             main {
                 max-width: 100% !important;
@@ -106,11 +112,11 @@
                     </h1>
 
                     <p class="text-base text-zinc-600 leading-relaxed" data-i18n="hero_bio_1">
-                        Tôi có hơn 2 năm làm SEO trong các mảng Tài chính (Ngân hàng VIB), Thương mại điện tử (CellphoneS), Xuất khẩu B2B (PNP Charcoal), Du lịch nghỉ dưỡng (MerPerle) và Phụ kiện ô tô (Ô Tô Hoàng Kim). Công việc hàng ngày của tôi bao gồm kiểm tra kỹ thuật website (Technical Audit), lên cấu trúc nội dung On-page, triển khai hệ thống Backlink / site vệ tinh và tối ưu hóa tìm kiếm thế hệ mới (AIO & GEO).
+                        Tôi có hơn 2 năm làm SEO thực chiến trong các mảng Tài chính (Ngân hàng VIB), Thương mại điện tử (CellphoneS), Xuất khẩu B2B (PNP Charcoal), Du lịch nghỉ dưỡng (MerPerle) và Phụ kiện ô tô (Ô Tô Hoàng Kim). Công việc hàng ngày của tôi bao gồm nghiên cứu từ khóa, kiểm tra kỹ thuật website (Technical Audit), tối ưu nội dung On-page chuẩn E-E-A-T, triển khai Backlink / site vệ tinh và tối ưu khả năng hiển thị trên các công cụ tìm kiếm AI (GEO & AIO).
                     </p>
 
                     <p class="text-sm text-zinc-600 leading-relaxed" data-i18n="hero_bio_2">
-                        Có kinh nghiệm quản lý song song nhiều dự án cùng lúc, tối ưu chi phí triển khai backlink và ngân sách nội dung hiệu quả, đồng thời trực tiếp phân công và theo dõi tiến độ cho nhóm Content và Thực tập sinh. Trong công việc, tôi kết hợp Claude, ChatGPT và Gemini để rút ngắn khoảng 80% thời gian lập dàn ý bài viết và xử lý code HTML/CSS cơ bản. Giao tiếp tiếng Trung tốt (HSK 3), tiếng Anh cơ bản. Mục tiêu sắp tới là phát triển lên vị trí SEO Team Leader hoặc Digital Marketing Manager.
+                        Có kinh nghiệm quản lý song song nhiều dự án, phối hợp trực tiếp với nhóm Content, Thực tập sinh và kỹ thuật viên (Dev) để xử lý lỗi web cũng như tối ưu tỷ lệ chuyển đổi (CRO) trang đích, kết hợp kiến thức nền tảng về Google Ads (theo dõi CTR, CPC, CPA và Conversion Rate). Trong công việc, tôi ứng dụng Claude, ChatGPT và Gemini để rút ngắn khoảng 50% thời gian lập dàn ý bài viết và xử lý code HTML/CSS cơ bản. Giao tiếp tiếng Trung tốt (HSK 3), tiếng Anh cơ bản.
                     </p>
 
                     <div class="flex flex-wrap gap-3 pt-2 no-print">
@@ -142,6 +148,10 @@
                         <div class="flex justify-between">
                             <span class="text-zinc-500">Email:</span>
                             <a href="mailto:dkluc28@gmail.com" class="font-medium hover:text-blue-600">dkluc28@gmail.com</a>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-zinc-500">Portfolio:</span>
+                            <a href="https://force0410.github.io/Portfolio-SEO" target="_blank" rel="noopener noreferrer" class="font-medium text-blue-600 hover:underline">force0410.github.io/Portfolio-SEO</a>
                         </div>
                         <div class="flex justify-between">
                             <span class="text-zinc-500">LinkedIn:</span>
@@ -182,6 +192,10 @@
                 <p class="text-sm text-zinc-600 mt-1" data-i18n="sec_projects_desc">
                     Chi tiết mục tiêu, vấn đề thực tế và kết quả kèm bản trình chiếu Slide trực tiếp trên trang cho từng dự án.
                 </p>
+                <!-- Hiển thị khi xuất PDF để HR bấm vào xem Slide trực tuyến -->
+                <div class="print-only mt-2 p-2.5 rounded-lg bg-blue-50 border border-blue-200 text-xs text-blue-800">
+                    💡 <strong>Xem bản trình chiếu Slide tương tác & Kiểm chứng từ khóa Top Google (Live SERP) trực tuyến tại:</strong> <a href="https://force0410.github.io/Portfolio-SEO" class="underline font-semibold">https://force0410.github.io/Portfolio-SEO</a>
+                </div>
             </div>
 
             <div class="space-y-8">
@@ -277,7 +291,7 @@
                             <div class="mt-3 p-3.5 rounded-xl bg-zinc-50 border border-zinc-200">
                                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2.5">
                                     <span class="text-xs font-semibold text-zinc-800" data-i18n="cps_proof_label">Kiểm chứng nhanh bài viết đang giữ Top 1-3 trên Google:</span>
-                                    <button onclick="openProjectModal('cellphones')" class="text-xs font-medium text-blue-600 hover:underline text-left sm:text-right" data-i18n="cps_view_all_proof">Xem chi tiết trong Slide →</button>
+                                    <button onclick="openProjectModal('cellphones')" class="text-xs font-medium text-blue-600 hover:underline text-left sm:text-right no-print" data-i18n="cps_view_all_proof">Xem chi tiết trong Slide →</button>
                                 </div>
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                                     <a href="https://www.google.com/search?q=so+s%C3%A1nh+ios+v%C3%A0+android+cellphones" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 rounded-lg bg-white border border-zinc-200 hover:border-blue-400 transition group">
@@ -307,7 +321,7 @@
                     </div>
                 </article>
 
-                <!-- Project 3: PNP Charcoal (09/2025 - 02/2026 | Placed right after CellphoneS) -->
+                <!-- Project 3: PNP Charcoal -->
                 <article class="border border-zinc-200 rounded-xl p-6 bg-white hover:border-zinc-300 transition">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 pb-4 border-b border-zinc-100">
                         <div>
@@ -349,7 +363,7 @@
                             <div class="mt-3 p-3.5 rounded-xl bg-zinc-50 border border-zinc-200">
                                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2.5">
                                     <span class="text-xs font-semibold text-zinc-800" data-i18n="pnp_proof_label">Kiểm chứng nhanh bộ từ khóa mục tiêu trên Google (pnpcharcoal.com):</span>
-                                    <button onclick="openProjectModal('pnp')" class="text-xs font-medium text-blue-600 hover:underline text-left sm:text-right" data-i18n="pnp_view_all_proof">Xem đủ 10 từ khóa trong Slide →</button>
+                                    <button onclick="openProjectModal('pnp')" class="text-xs font-medium text-blue-600 hover:underline text-left sm:text-right no-print" data-i18n="pnp_view_all_proof">Xem đủ 10 từ khóa trong Slide →</button>
                                 </div>
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                                     <a href="https://www.google.com/search?q=Charcoal+in+Vietnam+pnpcharcoal" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 rounded-lg bg-white border border-zinc-200 hover:border-blue-400 transition group">
@@ -557,7 +571,7 @@
                         <ul class="space-y-1.5 text-zinc-600 list-disc pl-4">
                             <li data-i18n="exp_4_b1">Phụ trách mảng kỹ thuật: cài đặt Schema Markup, chỉnh Sitemap, Robots.txt, thẻ Heading và xử lý 95% lỗi kỹ thuật trên web.</li>
                             <li data-i18n="exp_4_b2">Tạo hệ thống tài khoản mạng xã hội (Social Stack) và đi backlink trên diễn đàn, blog; giúp web phục hồi 150% lượng truy cập và đưa từ khóa chính lên Top 3.</li>
-                            <li data-i18n="exp_4_b3">Đề xuất sửa lại giao diện trang sản phẩm/dịch vụ, giảm tỷ lệ thoát trang từ 55% xuống 32%. </li>
+                            <li data-i18n="exp_4_b3">Đề xuất sửa lại giao diện trang sản phẩm/dịch vụ, giảm tỷ lệ thoát trang từ 55% xuống 32%.</li>
                             <li data-i18n="exp_4_b4">Thiết lập bảng theo dõi thứ hạng từ khóa tự động trên Google Sheets nối trực tiếp với dữ liệu Search Console.</li>
                         </ul>
                     </div>
@@ -570,23 +584,23 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
                 <div class="p-5 rounded-xl border border-zinc-200 bg-zinc-50/50">
-                    <div class="font-bold text-zinc-900 mb-2" data-i18n="skill_1_title">Chuyên môn SEO & Tìm kiếm mới</div>
+                    <div class="font-bold text-zinc-900 mb-2" data-i18n="skill_1_title">Chiến lược SEO & Tìm kiếm AI (GEO & AIO)</div>
                     <p class="text-zinc-600 leading-relaxed" data-i18n="skill_1_desc">
-                        Kiểm tra kỹ thuật (Sitemap, Robots.txt, Schema), tối ưu On-page (Topic Cluster, từ khóa ngữ nghĩa LSI, đúng mục đích tìm kiếm), Off-page (Entity, Social Stack, Link Building 3 tầng), Tối ưu hóa tìm kiếm thế hệ mới (AIO & GEO).
+                        Nghiên cứu từ khóa, phân tích đối thủ, Technical SEO (Sitemap, Robots.txt, Schema Markup), On-page (Topic Cluster, E-E-A-T, Internal Link), Local SEO, Off-page (Entity, Link Building) và tối ưu cấu trúc nội dung để tăng khả năng được trích dẫn trên Google AI Overviews, ChatGPT, Gemini.
                     </p>
                 </div>
 
                 <div class="p-5 rounded-xl border border-zinc-200 bg-zinc-50/50">
-                    <div class="font-bold text-zinc-900 mb-2" data-i18n="skill_2_title">Công cụ & Thiết kế</div>
+                    <div class="font-bold text-zinc-900 mb-2" data-i18n="skill_2_title">Đo lường, Công cụ & Google Ads</div>
                     <p class="text-zinc-600 leading-relaxed" data-i18n="skill_2_desc">
-                        Google Search Console, Google Analytics 4 (GA4), Looker Studio, SEMrush, Screaming Frog, KeywordTool.io, Google My Business, Google Ads cơ bản, Canva.
+                        Google Search Console (GSC), Google Analytics 4 (GA4), Looker Studio, SEMrush, Screaming Frog, KeywordTool.io, Google My Business, Canva. Nền tảng Google Ads cơ bản (nghiên cứu từ khóa quảng cáo, theo dõi CTR, CPC, CPA, Conversion Rate và tối ưu CRO trang đích).
                     </p>
                 </div>
 
                 <div class="p-5 rounded-xl border border-zinc-200 bg-zinc-50/50">
-                    <div class="font-bold text-zinc-900 mb-2" data-i18n="skill_3_title">Quản trị Web & Ứng dụng AI</div>
+                    <div class="font-bold text-zinc-900 mb-2" data-i18n="skill_3_title">Quản trị Web, Phối hợp Team & AI</div>
                     <p class="text-zinc-600 leading-relaxed" data-i18n="skill_3_desc">
-                        WordPress, HTML/CSS cơ bản, Litespeed Cache, Rank Math, Yoast SEO. Sử dụng Claude, ChatGPT (Codex), Gemini để lên dàn ý, viết code tùy biến và biên tập bài viết.
+                        WordPress, HTML/CSS cơ bản, Litespeed Cache, Rank Math, Yoast SEO. Kinh nghiệm phối hợp trực tiếp với Dev Team, Content Writer và Marketing Team. Ứng dụng Claude, ChatGPT, Gemini hỗ trợ lập dàn ý và tối ưu bài viết.
                     </p>
                 </div>
             </div>
@@ -713,7 +727,7 @@
                 </div>
             </div>
 
-            <!-- View 2: Original Google Slide Embed Iframe (for VIB, PNP Charcoal, MerPerle, Hoang Kim) -->
+            <!-- View 2: Original Google Slide Embed Iframe -->
             <div id="modal-view-embed" class="hidden w-full aspect-video bg-zinc-950 flex-1">
                 <iframe id="modal-embed-iframe" src="" class="w-full h-full border-0" allowfullscreen="true"></iframe>
             </div>
@@ -729,15 +743,15 @@
         let currentLang = 'vi';
         let activeProjectKey = 'vib';
         let currentSlideIndex = 0;
-        let currentModalView = 'deck'; // 'deck' or 'embed'
+        let currentModalView = 'deck';
 
-        // Google Slide Embed Links
+        // Google Slide Embed Links (PNP Charcoal included)
         const embedUrls = {
             vib: 'https://docs.google.com/presentation/d/1X_7ag_eIv6oiI1BfVM-gYORjdYEkVeHLrSpmllLcVQA/embed?start=false&loop=false&delayms=5000',
+            pnp: 'https://docs.google.com/presentation/d/14_40-VymClmsGJY6hQzAuethVWzO0KEwT29AKB0xZ_k/embed?start=false&loop=false&delayms=5000',
             merperle: 'https://docs.google.com/presentation/d/1Z93zgX_8QWe77q1VKP8zMqTEn-aYF3JQm3Ays0vxkI0/embed?start=false&loop=false&delayms=5000',
             hoangkim: 'https://docs.google.com/presentation/d/1ohaATzct0bVNmiR-o7k1_F4qLopUuhUVRL4ltOwHCNQ/embed?start=false&loop=false&delayms=5000',
-            cellphones: null,
-            pnp: 'https://docs.google.com/presentation/d/14_40-VymClmsGJY6hQzAuethVWzO0KEwT29AKB0xZ_k/embed?start=false&loop=false&delayms=5000'
+            cellphones: null
         };
 
         // Complete Multilingual Dictionaries for Main Page
@@ -753,8 +767,8 @@
                 hero_role_badge: "SEO Specialist",
                 hero_exp_badge: "Hơn 2 năm kinh nghiệm",
                 hero_name: "Đoàn Kiến Lực",
-                hero_bio_1: "Tôi có hơn 2 năm làm SEO trong các mảng Tài chính (Ngân hàng VIB), Thương mại điện tử (CellphoneS), Xuất khẩu B2B (PNP Charcoal), Du lịch nghỉ dưỡng (MerPerle) và Phụ kiện ô tô (Ô Tô Hoàng Kim). Công việc hàng ngày của tôi bao gồm kiểm tra kỹ thuật website (Technical Audit), lên cấu trúc nội dung On-page, triển khai hệ thống Backlink / site vệ tinh và tối ưu hóa tìm kiếm thế hệ mới (AIO & GEO).",
-                hero_bio_2: "Có kinh nghiệm quản lý song song nhiều dự án cùng lúc, tối ưu chi phí triển khai backlink và ngân sách nội dung hiệu quả, đồng thời trực tiếp phân công và theo dõi tiến độ cho nhóm Content và Thực tập sinh. Trong công việc, tôi kết hợp Claude, ChatGPT và Gemini để rút ngắn khoảng 80% thời gian lập dàn ý bài viết và xử lý code HTML/CSS cơ bản. Giao tiếp tiếng Trung tốt (HSK 3), tiếng Anh cơ bản. Mục tiêu sắp tới là phát triển lên vị trí SEO Team Leader hoặc Digital Marketing Manager.",
+                hero_bio_1: "Tôi có hơn 2 năm làm SEO thực chiến trong các mảng Tài chính (Ngân hàng VIB), Thương mại điện tử (CellphoneS), Xuất khẩu B2B (PNP Charcoal), Du lịch nghỉ dưỡng (MerPerle) và Phụ kiện ô tô (Ô Tô Hoàng Kim). Công việc hàng ngày của tôi bao gồm nghiên cứu từ khóa, kiểm tra kỹ thuật website (Technical Audit), tối ưu nội dung On-page chuẩn E-E-A-T, triển khai Backlink / site vệ tinh và tối ưu khả năng hiển thị trên các công cụ tìm kiếm AI (GEO & AIO).",
+                hero_bio_2: "Có kinh nghiệm quản lý song song nhiều dự án, phối hợp trực tiếp với nhóm Content, Thực tập sinh và kỹ thuật viên (Dev) để xử lý lỗi web cũng như tối ưu tỷ lệ chuyển đổi (CRO) trang đích, kết hợp kiến thức nền tảng về Google Ads (theo dõi CTR, CPC, CPA và Conversion Rate). Trong công việc, tôi ứng dụng Claude, ChatGPT và Gemini để rút ngắn khoảng 50% thời gian lập dàn ý bài viết và xử lý code HTML/CSS cơ bản. Giao tiếp tiếng Trung tốt (HSK 3), tiếng Anh cơ bản.",
                 btn_view_projects: "Xem hồ sơ dự án (Case Study)",
                 card_name: "Đoàn Kiến Lực",
                 card_dob: "Ngày sinh: 04/10/2000",
@@ -834,7 +848,7 @@
                 hk_challenge: "Website chưa từng làm SEO, bài viết rời rạc, danh mục sản phẩm chưa tối ưu trong khi ngành phụ kiện ô tô cạnh tranh cao.",
                 hk_step_1: "Chọn nhóm từ khóa dài (long-tail) ít cạnh tranh để lấy traffic trước, đồng thời sắp xếp lại danh mục sản phẩm và blog.",
                 hk_step_2: "Cài Schema cho sản phẩm, dịch vụ và đánh giá; sửa Sitemap, Robots.txt và khắc phục 95% lỗi kỹ thuật.",
-                hk_step_3: "Đề xuất chỉnh lại giao diện trang sản phẩm dễ nhìn hơn, giúp giảm tỷ lệ thoát trang từ 55% xuống còn 32%.",
+                hk_step_3: "Đề xuất chỉnh lại giao diện trang sản phẩm dễ nhìn hơn, giúp giảm tỷ lệ thoát trang từ 55% xuống còn 32%. ",
                 hk_step_4: "Đi backlink trên các diễn đàn ô tô, mạng xã hội; kết quả phục hồi 150% traffic và đưa từ khóa chính vào Top 3.",
                 hk_step_5: "Tạo file Google Sheets kết nối trực tiếp với Search Console để tự động cập nhật thứ hạng từ khóa hàng ngày.",
 
@@ -855,7 +869,7 @@
                 exp_3_time: "03/2025 – 09/2025",
                 exp_3_role: "SEO Executive",
                 exp_3_b1: "Lập kế hoạch và trực tiếp làm SEO tổng thể cho khách hàng ngành Tài chính và Du lịch - Khách sạn (Ngân hàng VIB, MerPerle NuiSam) từ khâu kiểm tra web đến khi tăng trưởng.",
-                exp_3_b2: "Xem xét hành vi người dùng trên trang và chỉnh lại bố cục trang đích, giúp tăng 22% tỷ lệ chuyển đổi đăng ký dịch vụ và mua hàng. ",
+                exp_3_b2: "Xem xét hành vi người dùng trên trang và chỉnh lại bố cục trang đích, giúp tăng 22% tỷ lệ chuyển đổi đăng ký dịch vụ và mua hàng.",
                 exp_3_b3: "Hướng dẫn công việc, chia bài và kiểm duyệt chất lượng cho nhóm Thực tập sinh SEO và Cộng tác viên Content theo đúng KPI.",
                 exp_3_b4: "Lấy số liệu từ Looker Studio, GA4 và Search Console để làm báo cáo định kỳ gửi quản lý và khách hàng.",
                 exp_4_company: "Ô Tô Hoàng Kim",
@@ -863,17 +877,17 @@
                 exp_4_role: "SEO Fresher",
                 exp_4_b1: "Phụ trách mảng kỹ thuật: cài đặt Schema Markup, chỉnh Sitemap, Robots.txt, thẻ Heading và xử lý 95% lỗi kỹ thuật trên web.",
                 exp_4_b2: "Tạo hệ thống tài khoản mạng xã hội (Social Stack) và đi backlink trên diễn đàn, blog; giúp web phục hồi 150% lượng truy cập và đưa từ khóa chính lên Top 3.",
-                exp_4_b3: "Đề xuất sửa lại giao diện trang sản phẩm/dịch vụ, giảm tỷ lệ thoát trang từ 55% xuống 32%. ",
+                exp_4_b3: "Đề xuất sửa lại giao diện trang sản phẩm/dịch vụ, giảm tỷ lệ thoát trang từ 55% xuống 32%.",
                 exp_4_b4: "Thiết lập bảng theo dõi thứ hạng từ khóa tự động trên Google Sheets nối trực tiếp với dữ liệu Search Console.",
 
                 // Kỹ năng & Học vấn
                 sec_skills_title: "Kỹ năng & Công cụ làm việc",
-                skill_1_title: "Chuyên môn SEO & Tìm kiếm mới",
-                skill_1_desc: "Kiểm tra kỹ thuật (Sitemap, Robots.txt, Schema), tối ưu On-page (Topic Cluster, từ khóa ngữ nghĩa LSI, đúng mục đích tìm kiếm), Off-page (Entity, Social Stack, Link Building 3 tầng), Tối ưu hóa tìm kiếm thế hệ mới (AIO & GEO).",
-                skill_2_title: "Công cụ & Thiết kế",
-                skill_2_desc: "Google Search Console, Google Analytics 4 (GA4), Looker Studio, SEMrush, Screaming Frog, KeywordTool.io, Google My Business, Google Ads cơ bản, Canva.",
-                skill_3_title: "Quản trị Web & Ứng dụng AI",
-                skill_3_desc: "WordPress, HTML/CSS cơ bản, Litespeed Cache, Rank Math, Yoast SEO. Sử dụng Claude, ChatGPT (Codex), Gemini để lên dàn ý, viết code tùy biến và biên tập bài viết.",
+                skill_1_title: "Chiến lược SEO & Tìm kiếm AI (GEO & AIO)",
+                skill_1_desc: "Nghiên cứu từ khóa, phân tích đối thủ, Technical SEO (Sitemap, Robots.txt, Schema Markup), On-page (Topic Cluster, E-E-A-T, Internal Link), Local SEO, Off-page (Entity, Link Building) và tối ưu cấu trúc nội dung để tăng khả năng được trích dẫn trên Google AI Overviews, ChatGPT, Gemini.",
+                skill_2_title: "Đo lường, Công cụ & Google Ads",
+                skill_2_desc: "Google Search Console (GSC), Google Analytics 4 (GA4), Looker Studio, SEMrush, Screaming Frog, KeywordTool.io, Google My Business, Canva. Nền tảng Google Ads cơ bản (nghiên cứu từ khóa quảng cáo, theo dõi CTR, CPC, CPA, Conversion Rate và tối ưu CRO trang đích).",
+                skill_3_title: "Quản trị Web, Phối hợp Team & AI",
+                skill_3_desc: "WordPress, HTML/CSS cơ bản, Litespeed Cache, Rank Math, Yoast SEO. Kinh nghiệm phối hợp trực tiếp với Dev Team, Content Writer và Marketing Team. Ứng dụng Claude, ChatGPT, Gemini hỗ trợ lập dàn ý và tối ưu bài viết.",
                 sec_edu_title: "Học vấn",
                 edu_school: "Cao đẳng Kinh tế TP.HCM",
                 edu_major: "Ngành: Quản trị kinh doanh",
@@ -898,8 +912,8 @@
                 hero_role_badge: "SEO Specialist",
                 hero_exp_badge: "2+ Years Experience",
                 hero_name: "Doan Kien Luc",
-                hero_bio_1: "SEO Specialist with over 2 years of hands-on experience across Finance (VIB Bank), E-commerce (CellphoneS), B2B Export (PNP Charcoal), Hospitality (MerPerle Resort), and Automotive Accessories (Hoang Kim Auto). My daily workflow includes technical website audits, on-page architecture, tiered backlink / satellite site management, and Next-Gen Search Optimization (AIO & GEO).",
-                hero_bio_2: "Experienced in managing multiple concurrent SEO projects, optimizing backlink deployment costs and content budgets effectively, while delegating tasks and tracking progress for content writers and SEO interns. I leverage Claude, ChatGPT, and Gemini to cut outline creation and basic HTML/CSS adjustments by 80%. Conversational in Chinese (HSK 3) and basic English. Aiming for an SEO Team Leader or Digital Marketing Manager role.",
+                hero_bio_1: "SEO Specialist with over 2 years of hands-on experience across Finance (VIB Bank), E-commerce (CellphoneS), B2B Export (PNP Charcoal), Hospitality (MerPerle Resort), and Automotive Accessories (Hoang Kim Auto). My daily workflow includes keyword research, technical audits, E-E-A-T on-page architecture, tiered backlink / satellite site management, and AI Search Optimization (GEO & AIO).",
+                hero_bio_2: "Experienced in managing concurrent SEO projects and collaborating directly with Content Writers, SEO Interns, and Dev Teams to resolve technical issues and boost Landing Page CRO, supported by Google Ads fundamentals (monitoring CTR, CPC, CPA, and Conversion Rate). I leverage Claude, ChatGPT, and Gemini to cut outline creation and basic HTML/CSS adjustments by 50%. Conversational in Chinese (HSK 3) and basic English.",
                 btn_view_projects: "View Case Studies",
                 card_name: "Doan Kien Luc",
                 card_dob: "DOB: 04/10/2000",
@@ -1013,12 +1027,12 @@
 
                 // Skills & Education
                 sec_skills_title: "Skills & Toolset",
-                skill_1_title: "SEO & Next-Gen Search",
-                skill_1_desc: "Technical Audits (Sitemap, Robots.txt, Schema), On-page (Topic Clusters, LSI keywords, Search Intent), Off-page (Entity Stacking, Tiered Link Building), Next-Gen Search Optimization (AIO & GEO).",
-                skill_2_title: "Analytics, Tools & Design",
-                skill_2_desc: "Google Search Console, Google Analytics 4 (GA4), Looker Studio, SEMrush, Screaming Frog, KeywordTool.io, Google My Business, Google Ads Fundamentals, Canva.",
-                skill_3_title: "Web CMS & AI Workflow",
-                skill_3_desc: "WordPress, fundamental HTML/CSS, Litespeed Cache, Rank Math, Yoast SEO. Prompt engineering with Claude, ChatGPT, and Gemini for outlines and code.",
+                skill_1_title: "SEO Strategy & AI Search (GEO & AIO)",
+                skill_1_desc: "Keyword research, competitor analysis, Technical SEO (Sitemap, Robots.txt, Schema), On-page (Topic Clusters, E-E-A-T, Internal Links), Local SEO, Off-page, and structuring content for citation on Google AI Overviews, ChatGPT, and Gemini.",
+                skill_2_title: "Analytics, Tools & Google Ads",
+                skill_2_desc: "Google Search Console (GSC), GA4, Looker Studio, SEMrush, Screaming Frog, KeywordTool.io, Google My Business, Canva. Google Ads Fundamentals (keyword research, tracking CTR, CPC, CPA, Conversion Rate, and Landing Page CRO).",
+                skill_3_title: "Web CMS, Team Collaboration & AI",
+                skill_3_desc: "WordPress, fundamental HTML/CSS, Litespeed Cache, Rank Math, Yoast SEO. Hands-on collaboration with Dev Teams, Content Writers, and Marketing Teams. Prompt engineering with Claude, ChatGPT, and Gemini.",
                 sec_edu_title: "Education",
                 edu_school: "Ho Chi Minh City College of Economics",
                 edu_major: "Major: Business Administration",
@@ -1043,8 +1057,8 @@
                 hero_role_badge: "SEO 专员",
                 hero_exp_badge: "2年以上实战经验",
                 hero_name: "段建力 (Đoàn Kiến Lực)",
-                hero_bio_1: "拥有2年以上 SEO 实战经验，深耕金融银行（VIB 国际银行）、电子商务（CellphoneS）、B2B 跨境出口（PNP Charcoal 木炭出口）、旅游度假（MerPerle 纽森度假村）及汽车配件（黄金汽车）等领域。日常负责网站技术诊断（Technical Audit）、站内内容架构（On-page）、高质量外链与卫星站群建设，以及新一代搜索优化（AIO & GEO）。",
-                hero_bio_2: "具备同时统筹管理多个项目的经验，能高效控制外链建设成本与内容预算，并直接分配任务、跟进内容写手与实习生团队达成增长目标。熟练使用 Claude、ChatGPT 和 Gemini 编写提示词，将大纲撰写与基础 HTML/CSS 代码处理时间缩短约 80%。具备良好的中文沟通能力（普通话良好 / HSK 3）及基础英语。职业目标是成为以数据为驱动的 SEO 团队主管或数字营销经理。",
+                hero_bio_1: "拥有2年以上 SEO 实战经验，深耕金融银行（VIB 国际银行）、电子商务（CellphoneS）、B2B 跨境出口（PNP Charcoal 木炭出口）、旅游度假（MerPerle 纽森度假村）及汽车配件（黄金汽车）等领域。日常负责关键词研究、网站技术诊断（Technical Audit）、E-E-A-T 站内内容架构、外链与卫星站群建设，以及生成式 AI 搜索优化（GEO & AIO）。",
+                hero_bio_2: "具备同时统筹多个项目的经验，能直接与内容写手、实习生及开发团队（Dev Team）紧密协作，解决技术问题并优化落地页转化率（CRO），同时掌握 Google Ads 基础（监测 CTR、CPC、CPA 与转化率）。熟练使用 Claude、ChatGPT 和 Gemini 将大纲撰写与基础 HTML/CSS 处理时间缩短约 50%。具备良好的中文沟通能力（HSK 3）及基础英语。",
                 btn_view_projects: "查看项目案例 (Case Study)",
                 card_name: "段建力 (Đoàn Kiến Lực)",
                 card_dob: "出生日期: 2000/10/04",
@@ -1158,12 +1172,12 @@
 
                 // Skills & Education
                 sec_skills_title: "专业技能与工具",
-                skill_1_title: "SEO 专业与新搜索优化",
-                skill_1_desc: "技术诊断 (Sitemap, Robots.txt, Schema)、站内优化 (主题集群 Topic Cluster, 语义词 LSI, 搜索意图)、站外推广 (Entity 建设, 社交矩阵, 三层外链建设)、新一代搜索优化 (AIO & GEO)。",
-                skill_2_title: "数据分析、工具与设计",
-                skill_2_desc: "Google Search Console, Google Analytics 4 (GA4), Looker Studio, SEMrush, Screaming Frog, KeywordTool.io, Google 商家资料, Google Ads 基础, Canva。",
-                skill_3_title: "网站管理与 AI 应用",
-                skill_3_desc: "WordPress 建站, 基础 HTML/CSS, Litespeed Cache, Rank Math, Yoast SEO。熟练使用 Claude, ChatGPT (Codex), Gemini 编写大纲、自定义代码及优化内容。",
+                skill_1_title: "SEO 策略与 AI 搜索优化 (GEO & AIO)",
+                skill_1_desc: "关键词研究、竞品分析、技术诊断 (Sitemap, Robots.txt, Schema)、站内优化 (Topic Cluster, E-E-A-T, 内链架构)、本地 SEO、站外推广，以及提升内容在 Google AI Overviews、ChatGPT、Gemini 中被引用与展示的概率。",
+                skill_2_title: "数据监测、工具与 Google Ads",
+                skill_2_desc: "Google Search Console (GSC), GA4, Looker Studio, SEMrush, Screaming Frog, KeywordTool.io, Google 商家资料, Canva。掌握 Google Ads 基础（广告词调研，跟踪 CTR、CPC、CPA、转化率及落地页 CRO 优化）。",
+                skill_3_title: "网站管理、团队协作与 AI 应用",
+                skill_3_desc: "WordPress 建站, 基础 HTML/CSS, Litespeed Cache, Rank Math, Yoast SEO。具备与开发团队 (Dev)、内容写手及营销团队直接协作的经验。熟练使用 Claude, ChatGPT, Gemini 辅助工作。",
                 sec_edu_title: "教育背景",
                 edu_school: "胡志明市经济高等专科学校",
                 edu_major: "专业：工商管理",
@@ -1974,7 +1988,6 @@
             const tabGroup = document.getElementById('modal-tab-group');
             const embedIframe = document.getElementById('modal-embed-iframe');
 
-            // Check if project has Google Slide embed
             if (embedUrls[key]) {
                 tabGroup.classList.remove('hidden');
                 tabGroup.classList.add('flex');
@@ -1999,7 +2012,6 @@
             document.body.style.overflow = '';
         };
 
-        // Switch between Interactive Slide Deck and Google Slide Embed
         window.switchModalView = function(view) {
             currentModalView = view;
             const deckView = document.getElementById('modal-view-deck');
@@ -2024,7 +2036,6 @@
             }
         };
 
-        // Render dynamic interactive slide content
         window.renderModalContent = function() {
             const projectData = projectDecks[activeProjectKey] && projectDecks[activeProjectKey][currentLang];
             if (!projectData) return;
@@ -2038,7 +2049,6 @@
             const slide = projectData.slides[currentSlideIndex];
             const container = document.getElementById('active-slide-container');
 
-            // Build HTML for the active slide
             let html = `
                 <div class="space-y-5">
                     <div class="flex items-center justify-between border-b border-zinc-100 pb-3">
@@ -2049,81 +2059,62 @@
                     </div>
             `;
 
-            // Case A: Slide 1 (Overview cards & paragraphs)
             if (slide.cards) {
                 html += `
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         ${slide.cards.map(c => `
-                            <div class="p-4 rounded-xl bg-zinc-900 text-white border-l-4 border-blue-500 shadow-sm">
-                                <div class="text-[11px] font-medium text-zinc-400 uppercase tracking-wider">${c.label}</div>
-                                <div class="text-xl sm:text-2xl font-extrabold text-white mt-1">${c.val}</div>
-                                <div class="text-xs text-zinc-300 mt-1.5 leading-relaxed">${c.desc}</div>
+                            <div class="p-3.5 rounded-xl bg-zinc-50 border border-zinc-200">
+                                <div class="text-xs text-zinc-500">${c.label}</div>
+                                <div class="text-base sm:text-lg font-bold text-zinc-900 mt-0.5">${c.val}</div>
+                                <div class="text-xs text-zinc-600 mt-1">${c.desc}</div>
                             </div>
                         `).join('')}
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 text-xs sm:text-sm">
-                        <div class="p-4 rounded-xl border border-red-200 bg-red-50/40">
-                            <div class="font-bold text-red-700 mb-1.5 flex items-center gap-1.5">
-                                <span class="w-2 h-2 rounded-full bg-red-600 inline-block"></span>
-                                <span>${slide.p1_title}</span>
-                            </div>
-                            <p class="text-zinc-700 leading-relaxed">${slide.p1_text}</p>
+                        <div class="p-4 rounded-xl border border-zinc-200 bg-zinc-50/50">
+                            <div class="font-bold text-zinc-900 mb-1">${slide.p1_title}</div>
+                            <p class="text-zinc-600 leading-relaxed">${slide.p1_text}</p>
                         </div>
-                        <div class="p-4 rounded-xl border border-blue-200 bg-blue-50/50">
-                            <div class="font-bold text-blue-700 mb-1.5 flex items-center gap-1.5">
-                                <span class="w-2 h-2 rounded-full bg-blue-600 inline-block"></span>
-                                <span>${slide.p2_title}</span>
-                            </div>
-                            <p class="text-zinc-800 leading-relaxed">${slide.p2_text}</p>
+                        <div class="p-4 rounded-xl border border-zinc-200 bg-zinc-50/50">
+                            <div class="font-bold text-zinc-900 mb-1">${slide.p2_title}</div>
+                            <p class="text-zinc-600 leading-relaxed">${slide.p2_text}</p>
                         </div>
                     </div>
                 `;
             }
 
-            // Case B: Slide 2 (4-Step Process Flow)
             if (slide.grid) {
                 html += `
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 text-xs sm:text-sm pt-1">
-                        ${slide.grid.map((g, idx) => `
-                            <div class="p-4 rounded-xl border border-zinc-200 bg-zinc-50/80 flex flex-col justify-between relative hover:border-blue-300 transition">
-                                <div class="space-y-2">
-                                    <div class="inline-flex items-center justify-between w-full">
-                                        <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-[10px] font-extrabold tracking-wider">${g.step}</span>
-                                        <span class="text-xs font-bold text-zinc-300">0${idx + 1}</span>
-                                    </div>
-                                    <div class="font-bold text-zinc-900 text-sm pt-1">${g.title}</div>
-                                    <p class="text-zinc-600 text-xs leading-relaxed">${g.desc}</p>
-                                </div>
-                                <div class="mt-4 pt-2.5 border-t border-zinc-200/80 flex items-center justify-between text-[11px] text-blue-700 font-semibold">
-                                    <span>SEO Execution</span>
-                                    <span>→</span>
-                                </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs sm:text-sm">
+                        ${slide.grid.map(g => `
+                            <div class="p-4 rounded-xl border border-zinc-200 bg-zinc-50/60 space-y-1">
+                                <div class="text-[11px] font-bold text-blue-700">${g.step}</div>
+                                <div class="font-bold text-zinc-900">${g.title}</div>
+                                <p class="text-zinc-600 text-xs leading-relaxed">${g.desc}</p>
                             </div>
                         `).join('')}
                     </div>
                 `;
             }
 
-            // Case C: Slide with metrics (VIB / MerPerle / Hoang Kim results)
             if (slide.metrics) {
                 html += `
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         ${slide.metrics.map(m => `
-                            <div class="p-4 rounded-xl bg-zinc-900 text-white border-l-4 border-emerald-500">
-                                <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400">${m.num}</div>
-                                <div class="text-xs font-bold text-white mt-1.5">${m.label}</div>
-                                <div class="text-[11px] text-zinc-400 mt-1 leading-relaxed">${m.detail}</div>
+                            <div class="p-4 rounded-xl bg-blue-50/50 border border-blue-200/80">
+                                <div class="text-2xl font-bold text-blue-800">${m.num}</div>
+                                <div class="text-xs font-semibold text-zinc-900 mt-1">${m.label}</div>
+                                <div class="text-[11px] text-zinc-500 mt-0.5">${m.detail}</div>
                             </div>
                         `).join('')}
                     </div>
-                    <div class="p-4 rounded-xl border-l-4 border-blue-600 bg-blue-50/60 text-xs sm:text-sm mt-3">
+                    <div class="p-4 rounded-xl border border-zinc-200 bg-zinc-50 text-xs sm:text-sm mt-3">
                         <div class="font-bold text-zinc-900 mb-1">${slide.summary_title}</div>
-                        <p class="text-zinc-700 leading-relaxed">${slide.summary_text}</p>
+                        <p class="text-zinc-600 leading-relaxed">${slide.summary_text}</p>
                     </div>
                 `;
             }
 
-            // Case D: SERP verification items (CellphoneS & PNP Charcoal)
             if (slide.serpList) {
                 const isPnp = (activeProjectKey === 'pnp');
                 const brandBadge = isPnp ? 'P' : 'S';
@@ -2157,7 +2148,6 @@
                     </div>
                 `;
 
-                // Render interactive 10-keyword Live SERP pill grid specifically for PNP Charcoal on Slide 3
                 if (isPnp) {
                     const pnpKeywords = [
                         "Coconut Charcoal", "White Charcoal", "Eucalyptus Charcoal", "Coffee Charcoal", "Mangrove Charcoal",
@@ -2182,7 +2172,6 @@
                 }
             }
 
-            // Case E: Takeaways & tools (Slide 4)
             if (slide.tools && slide.points) {
                 html += `
                     <div class="space-y-4">
@@ -2202,7 +2191,6 @@
             html += `</div>`;
             container.innerHTML = html;
 
-            // Render Dots
             const dotsContainer = document.getElementById('slide-dots-container');
             let dotsHtml = '';
             for (let i = 0; i < totalSlides; i++) {
@@ -2212,7 +2200,6 @@
             }
             dotsContainer.innerHTML = dotsHtml;
 
-            // Update Prev / Next buttons state
             document.getElementById('slide-prev-btn').disabled = (currentSlideIndex === 0);
             document.getElementById('slide-next-btn').disabled = (currentSlideIndex === totalSlides - 1);
         };
@@ -2227,7 +2214,6 @@
             window.renderModalContent();
         };
 
-        // Close modal on outer overlay click or Escape key
         document.getElementById('project-modal').addEventListener('click', (e) => {
             if (e.target.id === 'project-modal') window.closeProjectModal();
         });
@@ -2242,7 +2228,6 @@
             }
         });
 
-        // Copy contact data with feedback
         window.copyValue = function(text) {
             const input = document.createElement('textarea');
             input.value = text;
@@ -2257,12 +2242,10 @@
             setTimeout(() => toast.classList.add('hidden'), 2200);
         };
 
-        // Export directly to PDF via print styles
         window.exportToPDF = function() {
             window.print();
         };
 
-        // Initialize language immediately
         window.setLanguage('vi');
     </script>
 </body>
